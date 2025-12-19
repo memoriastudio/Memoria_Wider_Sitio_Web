@@ -1,9 +1,9 @@
 ---
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-500.css';
-import ViewTransitions from 'astro:transitions';
 import Footer from '../components/layout/Footer.astro';
 import Header from '../components/layout/Header.astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   description: string;
@@ -25,11 +25,12 @@ const { description, title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <Analytics />
   </head>
   <body
     class="bg-primary-50 text-primary-950 antialiased transition dark:bg-primary-950 dark:text-primary-200"
   >
-    <Header />
+  <Header />
     <main>
       <slot />
     </main>
