@@ -1,135 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import BenefitsReutilizable from '../components/home/BenefitsReutilizable.astro';
 import PricingInspirational from '../components/pricing/PricingInspirational.astro';
 import Services from '../components/home/services.astro';
 import BenefitsBento from '../components/home/BenefitsBento.astro';
-
-const editingServices = [
-  {
-    name: 'Shorts Editing',
-    description: 'Clean, fast-paced edits crafted to maximize retention in under 60 seconds.',
-    colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
-  },
-  {
-    name: 'Long-Form Editing',
-    description:
-      'Full-length videos with narrative structure, pacing, and a clear storytelling arc.',
-    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
-  },
-  {
-    name: 'Shorts from Long Videos',
-    description:
-      'We detect highlight moments or narrative beats and convert them into impactful Shorts.',
-    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
-  },
-  {
-    name: 'Shorts With Intent',
-    description: 'Shorts designed from scratch — built to perform, not extracted.',
-    colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]',
-  },
-  {
-    name: 'Visual Consistency',
-    description:
-      'Brand-aligned editing that ensures every video shares a cohesive visual language, reinforcing your identity and making all content feel like part of the same creator universe.',
-    colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
-  },
-  {
-    name: 'Premium Add-Ons (CGI & VFX)',
-    description: 'High-impact visual elements to elevate your videos when needed.',
-    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
-  },
-  {
-    name: 'Pacing & Retention Optimization',
-    description: 'Editing focused on keeping viewers engaged from start to finish.',
-    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
-  },
-  {
-    name: 'Clean Audio & Sound Design',
-    description: 'Improved clarity, mixing, SFX, and appropriate transitions.',
-    colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]',
-  },
-  {
-    name: 'Color & Visual Identity',
-    description:
-      'Color correction and visual design aligned with your brand tone, creating a distinctive and recognizable look across all your content.',
-    colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
-  },
-  {
-    name: 'Narrative Structure',
-    description: 'For long-form videos: we structure the story, the beats, and the hooks.',
-    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
-  },
-  {
-    name: 'Platform-Optimized Exports',
-    description: 'Edits tailored for YouTube, TikTok, Reels, or multi-platform.',
-    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
-  },
-  {
-    name: 'Reliable Turnaround',
-    description: 'Consistent delivery times you can plan your content around.',
-    colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]',
-  },
-];
+import BenefitsEditing from '../docs/edition/benefts';
+import '../styles/style.css';
 ---
-<style>
-  .button-send {
-    font-family: inherit;
-    overflow: hidden;
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-
-  .button-send span {
-    display: block;
-    margin-left: 0.3em;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-send svg {
-    display: block;
-    transform-origin: center center;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .button-send:hover .svg-wrapper {
-    animation: fly-1 0.6s ease-in-out infinite alternate;
-  }
-
-  .button-send:hover svg {
-    transform: translateX(1.2em) rotate(45deg) scale(1.1);
-  }
-
-  .button-send:hover span {
-    transform: translateX(5em);
-  }
-
-  .button-send:active {
-    transform: scale(0.95);
-  }
-
-  @keyframes fly-1 {
-    from {
-      transform: translateY(0.1em);
-    }
-
-    to {
-      transform: translateY(-0.1em);
-    }
-  }
-
-  .css-1qzevvg {
-    margin: 0 auto !important;
-  }
-  .css-1qzevvg:hover {
-    cursor: pointer !important;
-  }
-
-  .sectionStats .css-1fzpoyk {
-    width: 100%;
-    max-width: 1200px;
-  }
-</style>
 <Layout
   description="From the minds at Memoria Studio — discover how we build, scale, and share creative systems."
   title="Editing · Memoria Wider"
@@ -192,7 +68,7 @@ const editingServices = [
       </div>
     </div>
   </section>
-  <BenefitsBento title="What You Can Get" items={editingServices} />
+  <BenefitsBento title="What You Can Get" items={BenefitsEditing} />
   <PricingInspirational />
   <Services />
 </Layout>
