@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Inspiratiogrid from '../components/home/inspiratiogrid.astro';
+import Services from '../components/home/services.astro';
+import PricingInspirational from '../components/pricing/PricingInspirational.astro';
+---
+
+<Layout
+  description="From the minds at Memoria Studio — discover how we build, scale, and share creative systems."
+  title="Inspirational · Memoria Wider"
+>
+  <section class="px-4 md:py-12">
+    <div class="mx-auto max-w-2xl lg:max-w-7xl lg:px-4">
+      <div class="grid gap-12 pb-20 lg:grid-cols-2 lg:gap-12">
+        <img
+          class="mx-auto h-[490px] w-full rounded-3xl object-cover md:h-[800px]"
+          width="576"
+          height="800"
+          src="/assets/IMG_2121.jpg"
+          alt="Our experts working together"
+        />
+        <div class="flex flex-col gap-10">
+          <div class="space-y-8 sm:space-y-6">
+            <h2 class="text-3xl font-semibold tracking-tight sm:text-5xl">Inspirational Report</h2>
+            <h2 class="text-xl font-medium tracking-tight sm:text-xl md:text-2xl">
+              Build creative direction that evolves every week — tailored to your channel and what’s
+              trending.
+            </h2>
+            <div class="space-y-6">
+              <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
+                The Inspirational Report delivers weekly creative ideations built specifically for
+                your tone, narrative and niche. Each week, you receive one core Ideation that
+                expands into multiple creative variants you can use, mix, or scale into a full
+                series — always aligned with the current trends and your channel’s DNA. (Texto
+                introductorio)
+              </p>
+              <h2 class="text-3xl font-medium tracking-tight sm:text-xl">
+                What You’ll Get Every Week
+              </h2>
+
+              <Inspiratiogrid />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <!--MODIFICAR LINKS STRAPI-->
+      <PricingInspirational />
+      <Services />
+    </div>
+  </section>
+</Layout>

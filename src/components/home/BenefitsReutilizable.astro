@@ -1,0 +1,49 @@
+---
+interface Benefit {
+  name: string;
+  description: string;
+  colorClass: string;
+}
+
+const { title, items } = Astro.props as {
+  title?: string;
+  items: Benefit[];
+};
+---
+
+<section class="py-8">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-12 sm:gap-16">
+      {title && <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">{title}</h2>}
+
+      <div class="columns-1 gap-4 sm:columns-2 lg:columns-4">
+        {
+          items.map((service) => (
+            <div
+              class:list={[
+                service.colorClass,
+                service.colorClass
+                  .replace('/[0.05]', '/[0.10]')
+                  .replace('/[0.10]', '/[0.15]')
+                  .replace('/[0.15]', '/[0.20]')
+                  .replace('/[0.20]', '/[0.25]'),
+
+                'flex flex-col gap-4 rounded-xl p-4 shadow-md',
+                'transition duration-500 ease-out will-change-transform',
+                'hover:scale-[1.03] hover:shadow-lg',
+                'mb-4 break-inside-avoid-column',
+              ]}
+            >
+              <div class="flex flex-col">
+                <h3 class="text-xl font-medium">{service.name}</h3>
+                <p class="mt-2 text-sm text-primary-950/70 dark:text-primary-200/70">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

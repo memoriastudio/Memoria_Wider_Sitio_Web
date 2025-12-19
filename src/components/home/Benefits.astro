@@ -1,0 +1,104 @@
+---
+const benefits = [
+  {
+    name: 'Perpetual Inspiration, Si claro',
+    description: 'Never run out of ideas. Gain an endless source of fresh insights, guaranteeing a full creative pipeline.',
+    colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]', // Muy sutil
+  },
+  {
+    name: 'Guaranteed Consistency',
+    description: 'Flawlessly consistent editing that matches your unique style and brand guidelines, ensuring cohesive content every time.',
+    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]', // Más notorio
+  },
+  {
+    name: 'Creative Energy Restored',
+    description: 'Experience less burnout. Offload the production burden to us and dedicate your energy where it matters most.',
+    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]', // Medio
+  },
+  {
+    name: 'Accelerated Launch',
+    description: 'Deploy videos faster. We significantly cut down turnaround times to maintain a dynamic and timely content schedule.',
+    colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]', // El más oscuro
+  },
+  {
+    name: 'Effortless Production Scale',
+    description: 'Easily scale your output. Grow your production capacity without limits to meet increasing audience demand.',
+    colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
+  },
+  {
+    name: 'Your Dedicated Experts',
+    description: 'Always have a dedicated, expert team. A reliable extension of your brand, committed solely to executing your vision.',
+    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
+  },
+  {
+    name: 'Rich, Engaging Content',
+    description: 'Enrich your videos with more on-screen elements for truly captivating content that boosts engagement.',
+    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
+  },
+  {
+    name: 'Stay Ahead of the Curve',
+    description: 'Always be up-to-date with current trends. We ensure your content is relevant and competitive in the industry.',
+    colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]',
+  },
+  {
+    name: 'Optimization Done For You',
+    description: 'Stop wasting time on SEO, hashtags, and technical details. We handle all optimization for maximum visibility.',
+    colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
+  },
+  {
+    name: 'Unwavering Focus',
+    description: 'Achieve full concentration on your message and creative process. We eliminate distractions so you focus on your core genius.',
+    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
+  },
+  {
+    name: 'Professional Grade Polish',
+    description: 'Final product with unparalleled clarity and shine. Achieve a professional aesthetic that elevates your brand perception.',
+    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
+  },
+  {
+    name: 'Stress-Free Workflow',
+    description: 'Eliminate production bottlenecks and headaches. Enjoy a smooth workflow where all technical complexities are managed for you.',
+    colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]',
+  },
+];
+---
+
+<section class="py-8">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-12 sm:gap-16">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">The Results You're Looking For...</h2>
+      
+      <div class="columns-1 sm:columns-2 lg:columns-4 gap-4">
+        {
+          benefits.map((service) => (
+            <div 
+              class:list={[
+                // APLICACIÓN DE LA CLASE DE COLOR DINÁMICA
+                service.colorClass, 
+                // Clase de hover dinámica
+                service.colorClass.replace('/[0.05]', '/[0.10]').replace('/[0.10]', '/[0.15]').replace('/[0.15]', '/[0.20]').replace('/[0.20]', '/[0.25]'),
+                
+                // Clases de estilo y hover de la tarjeta
+                'flex flex-col gap-4 rounded-xl p-4 shadow-md',
+                'transition duration-500 ease-out will-change-transform',
+                'hover:scale-[1.03] hover:shadow-lg', 
+                // CLASES CLAVE PARA COLUMNAS
+                'break-inside-avoid-column mb-4',
+              ]}
+            >
+              <div class="flex flex-col">
+                <h3 class="text-xl font-medium">{service.name}</h3>
+                <p class="text-primary-950/70 dark:text-primary-200/70 text-sm mt-2">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

@@ -1,0 +1,67 @@
+---
+const inspiratiogrid = [
+  {
+    name: '🧠 Weekly Ideation',
+    description: 'A core idea designed specifically for your channel.',
+    colorClass: 'bg-primary-500/10 dark:bg-primary-400/10',
+  },
+  {
+    name: '🎨 Creative Variants',
+    description: ' Multiple angles and approaches you can execute.',
+    colorClass: 'bg-primary-500/20 dark:bg-primary-400/20',
+  },
+  {
+    name: '📈 Trend-Aware Angles',
+    description: 'Ideas aligned with what’s performing right now.',
+    colorClass: 'bg-primary-500/30 dark:bg-primary-400/30',
+  },
+  {
+    name: '🎥 Filming Priorities',
+    description: 'Clear guidance on what to film first — and why.',
+    colorClass: 'bg-primary-500/30 dark:bg-primary-400/30',
+  },
+  {
+    name: '⚡ Fast Execution Delivery',
+    description: 'Simple, visual material built for quick production.',
+    colorClass: 'bg-primary-500/20 dark:bg-primary-400/20',
+  },
+  {
+    name: '🔄 Continuous Creative Direction',
+    description: 'Always know what to produce each week.',
+    colorClass: 'bg-primary-500/10 dark:bg-primary-400/10',
+  },
+];
+---
+
+<section class="py-4">
+  <div class="mx-auto max-w-2xl md:px-4 lg:max-w-7xl">
+    <div class="flex flex-col gap-6 sm:gap-8">
+      <div class="grid grid-cols-1 gap-4 max-md:px-4 sm:grid-cols-2 lg:grid-cols-2">
+        {
+          inspiratiogrid.map((service) => (
+            <div
+              class:list={[
+                service.colorClass,
+                service.colorClass
+                  .replace('/[0.05]', '/[0.10]')
+                  .replace('/[0.10]', '/[0.15]')
+                  .replace('/[0.15]', '/[0.20]')
+                  .replace('/[0.20]', '/[0.25]'),
+                'flex flex-col gap-2 rounded-xl p-2 shadow-md',
+                'transition duration-500 ease-out will-change-transform',
+                'hover:scale-[1.03] hover:shadow-lg',
+              ]}
+            >
+              <div class="flex flex-col p-2">
+                <h3 class="text-base font-medium">{service.name}</h3>
+                <p class="mt-0.5 text-sm text-primary-950/70 dark:text-primary-200/70">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+---
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import ViewTransitions from 'astro:transitions';
+import Footer from '../components/layout/Footer.astro';
+import Header from '../components/layout/Header.astro';
+
+interface Props {
+  description: string;
+  title: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" x-cloak x-data :class="{ 'dark': $store.theme.isDark }">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-primary-50 text-primary-950 antialiased transition dark:bg-primary-950 dark:text-primary-200"
+  >
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <style is:global>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+    <script>
+      // @ts-ignore
+      import Alpine from 'alpinejs';
+      // @ts-ignore
+      import collapse from '@alpinejs/collapse';
+
+      Alpine.plugin(collapse);
+
+      Alpine.store('theme', {
+        // 1. Inicializamos 'isDark' directamente (sin usar init() ni 'this')
+        // Esto arregla el primer error de 'isDark'
+        isDark: (() => {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme') === 'dark';
+          }
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return true;
+          }
+          return false;
+        })(),
+
+        toggle() {
+          // 2. Usamos (this as any) para arreglar el error en 'isDark' dentro de la función
+          (this as any).isDark = !(this as any).isDark;
+          localStorage.setItem('theme', (this as any).isDark ? 'dark' : 'light');
+        },
+      });
+
+      // 3. Usamos (window as any) para arreglar el error de 'Alpine'
+      (window as any).Alpine = Alpine;
+      Alpine.start();
+    </script>
+  </body>
+</html>
