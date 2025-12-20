@@ -11,11 +11,13 @@ module.exports = {
       current: 'currentColor',
       transparent: 'transparent',
       white: '#ffffff',
+      memoria: '#6a00f4',
       primary: colors.stone,
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
-      bbh: ['BBH Bartle', 'sans-serif'],  
+      bbh: ['BBH Bartle', 'sans-serif'], 
+      Satoshi: ['Satoshi', 'sans-serif'],
     },
     fontSize: {
       xs: ['0.75rem', '1rem'],
