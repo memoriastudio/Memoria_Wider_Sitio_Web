@@ -1,4 +1,12 @@
- .button-send {
+@tailwind utilities;
+
+@layer utilities {
+  .font-bbh-bartle {
+    font-family: 'BBH Bartle', sans-serif;
+  }
+}
+
+.button-send {
     font-family: inherit;
     overflow: hidden;
     transition: all 0.2s;

@@ -7,6 +7,8 @@ import BenefitsReutilizable from '../components/home/BenefitsReutilizable.astro'
 import benefitsHome from '../docs/home/benefits.js';
 import Bento12 from '../components/home/Bento12.astro';
 import '../styles/style.css';
+import ServicesHome from '../components/home/ServicesHome.astro';
+import CallToAction from '../components/home/CallToAction.astro';
 ---
 
 <Layout
@@ -38,7 +40,7 @@ import '../styles/style.css';
         <p class="mt-4 text-lg [text-shadow:0_1px_3px_rgba(0,0,0,0.5)] sm:text-xl">
           Find the spark to build what’s next — and make it real with Memoria Wider.
         </p>
-        <a href="/inspirational" class="btn-53 bg-memoria/70 dark:bg-memoria/70 inline-block w-48">
+        <a href="/inspirational" class="btn-53 inline-block w-48 bg-memoria/70 dark:bg-memoria/70">
           <div class="original bg-memoria/40 dark:bg-memoria/70">Get Inspired</div>
           <div class="letters">
             <span>G</span>
@@ -141,9 +143,11 @@ import '../styles/style.css';
   <BenefitsReutilizable title="The Results You're Looking For..." items={benefitsHome} />
   <Bento12 items={benefitsHome} />
 
+  <ServicesHome />
   <ServiceTable />
 
   <Faq />
 
   <Cta />
+  <CallToAction />
 </Layout>

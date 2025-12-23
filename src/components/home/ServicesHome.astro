@@ -1,0 +1,76 @@
+---
+const service = [
+  {
+    name: 'Inspirational Report',
+    description:
+      'Turn creative insights into actionable direction for your next project with the Inspirational Report.',
+    isFlagged: true,
+    action: 'Learn More',
+    href: '/inspirational',
+    features: [],
+    imageSrc: '/assets/IMG_2121.jpg',
+  },
+  {
+    name: 'Edition',
+    description:
+      'Where creative vision meets flawless execution — edit with impact and craft visuals that resonate.',
+    isFlagged: true,
+    action: 'Learn More',
+    href: '/edition',
+    features: [],
+    imageSrc: '/assets/pexels-muhammed-cetinkaya-470437330-17115912.jpg',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-12 sm:gap-16">
+      <h2 class="font-bbh-bartle mb-16 text-center text-2xl sm:text-4xl">
+        Services Built to Transform Ideas into Results
+      </h2>
+      <div class="grid gap-8 lg:mt-0 lg:grid-cols-2">
+        {
+          service.map((item) => (
+            <div class=" relative flex h-full w-[460px] flex-col rounded-xl bg-primary-500/30 bg-clip-border shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div class="group relative mx-4 -mt-8 h-52 overflow-hidden rounded-xl bg-clip-border shadow-lg">
+                <img src={item.imageSrc} alt={item.name} class="h-full w-full object-cover" />
+              </div>
+              <div class="p-6">
+                <h2 class=" mb-2 block text-4xl font-semibold leading-snug tracking-normal antialiased transition-colors duration-300">
+                  {item.name}
+                </h2>
+                <p class="block text-xl font-light leading-relaxed antialiased">
+                  {item.description}
+                </p>
+              </div>
+              <div class="p-6 pt-0">
+                <a
+                  href={item.href}
+                  class="group relative inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-memoria/30 to-memoria/10 px-6 py-3 font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
+                >
+                  <span class="relative flex items-center gap-2">
+                    {item.action}
+                    <svg
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      class="h-5 w-5 transform transition-transform group-hover:translate-x-1"
+                    >
+                      <path
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        stroke-width="2"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
