@@ -1,8 +1,8 @@
 ---
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-500.css';
-import Footer from '../components/layout/Footer.astro';
-import Header from '../components/layout/Header.astro';
+import Footer from '../layouts/Footer.astro';
+import Header from '../layouts/Header.astro';
 import Analytics from '@vercel/analytics/astro';
 
 interface Props {
@@ -26,8 +26,14 @@ const { description, title } = Astro.props;
     <meta name="description" content={description} />
     <title>{title}</title>
     <Analytics />
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body
     class="bg-primary-50 text-primary-950 antialiased transition dark:bg-primary-950 dark:text-primary-200"
@@ -51,8 +57,6 @@ const { description, title } = Astro.props;
       Alpine.plugin(collapse);
 
       Alpine.store('theme', {
-        // 1. Inicializamos 'isDark' directamente (sin usar init() ni 'this')
-        // Esto arregla el primer error de 'isDark'
         isDark: (() => {
           if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
             return localStorage.getItem('theme') === 'dark';
@@ -64,13 +68,10 @@ const { description, title } = Astro.props;
         })(),
 
         toggle() {
-          // 2. Usamos (this as any) para arreglar el error en 'isDark' dentro de la función
           (this as any).isDark = !(this as any).isDark;
           localStorage.setItem('theme', (this as any).isDark ? 'dark' : 'light');
         },
       });
-
-      // 3. Usamos (window as any) para arreglar el error de 'Alpine'
       (window as any).Alpine = Alpine;
       Alpine.start();
     </script>
