@@ -5,154 +5,111 @@ interface Item {
   colorClass: string;
 }
 
-const { items, logo } = Astro.props as {
-  items: Item[];
-  logo: string;
-};
+const { items } = Astro.props as { items: Item[] };
+import '../../styles/style.css';
 ---
 
-<section class="py-24 bg-gradient-to-br from-[#0B1020] via-[#0E1328] to-black">
+<section class="py-24">
   <div class="mx-auto max-w-7xl px-6">
-
-    <div
-      class="
-        grid
-        grid-cols-1
-        sm:grid-cols-2
-        lg:grid-cols-5
-        auto-rows-[180px]
-        gap-6
-        rounded-[2.5rem]
-        p-8
-        bg-white/5
-        backdrop-blur-2xl
-        shadow-[0_60px_160px_rgba(0,0,0,0.6)]
-      "
-    >
-
+    <div class="grid
+        auto-rows-[160px]
+        grid-cols-6
+        grid-rows-5
+        gap-4">
       <!-- 1 -->
-      <div class={`bento ${items[0].colorClass}`}>
-        <h3>{items[0].name}</h3>
-        <p>{items[0].description}</p>
+      <div class={`card card-sm col-start-1 row-start-1 ${items[0].colorClass}`}>
+        <h3 class="text-xl font-semibold">{items[0].name}</h3>
+        <p class="opacity-80">{items[0].description}</p>
       </div>
 
       <!-- 2 -->
-      <div class={`bento ${items[1].colorClass}`}>
-        <h3>{items[1].name}</h3>
-        <p>{items[1].description}</p>
+      <div class={`card card-md col-start-2 col-span-2 row-start-1 ${items[1].colorClass}`}>
+        <h3 class="text-2xl font-semibold">{items[1].name}</h3>
+        <p class="opacity-80">{items[1].description}</p>
       </div>
 
       <!-- 3 -->
-      <div class={`bento ${items[2].colorClass}`}>
-        <h3>{items[2].name}</h3>
-        <p>{items[2].description}</p>
+      <div class={`card card-sm col-start-4 row-start-1 ${items[2].colorClass}`}>
+        <h3 class="text-xl font-semibold">{items[2].name}</h3>
+        <p class="opacity-80">{items[2].description}</p>
       </div>
 
       <!-- 4 -->
-      <div class={`bento ${items[3].colorClass}`}>
-        <h3>{items[3].name}</h3>
-        <p>{items[3].description}</p>
+      <div class={`card card-lg col-start-5 col-span-2 row-start-1 ${items[3].colorClass}`}>
+        <h3 class="text-4xl font-semibold">{items[3].name}</h3>
+        <p class="opacity-80">{items[3].description}</p>
       </div>
 
       <!-- 5 -->
-      <div class={`bento ${items[4].colorClass}`}>
-        <h3>{items[4].name}</h3>
-        <p>{items[4].description}</p>
-      </div>
-
-      <!-- HERO CENTRAL (logo) -->
-      <div
-        class="
-          relative
-          col-span-1
-          sm:col-span-2
-          lg:col-span-3
-          row-span-2
-          rounded-[2.5rem]
-          bg-gradient-to-br from-violet-500/40 to-indigo-900/40
-          backdrop-blur-2xl
-          flex flex-col items-center justify-center
-          text-center
-          overflow-hidden
-        "
-      >
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15),transparent_60%)]" />
-
-        <div
-          class="
-            relative
-            z-10
-            w-44 h-44
-            rounded-full
-            bg-black/40
-            backdrop-blur-xl
-            flex items-center justify-center
-            shadow-[0_0_90px_rgba(139,92,246,0.8)]
-          "
-        >
-          <img src='/public/assets/logo-black.png' alt="Logo" class="w-28 h-28 object-contain rounded-full" />
-        </div>
+      <div class={`card card-md col-start-1 row-start-2 row-span-2 ${items[4].colorClass}`}>
+        <h3 class="text-2xl font-semibold">{items[4].name}</h3>
+        <p class="opacity-80">{items[4].description}</p>
       </div>
 
       <!-- 6 -->
-      <div class={`bento ${items[5].colorClass}`}>
-        <h3>{items[5].name}</h3>
-        <p>{items[5].description}</p>
+      <div class={`card card-sm col-start-2 row-start-2 ${items[5].colorClass}`}>
+        <h3 class="text-xl font-semibold">{items[5].name}</h3>
+        <p class="opacity-80">{items[5].description}</p>
       </div>
 
       <!-- 7 -->
-      <div class={`bento ${items[6].colorClass}`}>
-        <h3>{items[6].name}</h3>
-        <p>{items[6].description}</p>
+      <div class={`card card-sm col-start-3 row-start-2 ${items[6].colorClass}`}>
+        <h3 class="text-xl font-semibold">{items[6].name}</h3>
+        <p class="opacity-80">{items[6].description}</p>
       </div>
 
-      <!-- 8 -->
-      <div class={`bento ${items[7].colorClass}`}>
-        <h3>{items[7].name}</h3>
-        <p>{items[7].description}</p>
+      <!-- 8 – LOGO CENTRAL -->
+      <div
+        class={`
+          card card-lg
+          col-start-2 col-span-3
+          row-start-3 row-span-2
+          flex items-center justify-center
+          text-center
+          card-radial
+        `}
+      >
+        <!-- Logo claro (para dark mode) -->
+        <img
+          :src="$store.theme.isDark ? '/assets/logo-light.png' : '/assets/logo-black.png'"
+          alt="Logo Memoria Wider"
+          class="hidden h-[390px] w-[390px] dark:block"
+        />
       </div>
 
       <!-- 9 -->
-      <div class={`bento ${items[8].colorClass}`}>
-        <h3>{items[8].name}</h3>
-        <p>{items[8].description}</p>
+      <div
+        class={`card card-md col-start-5 col-span-2 row-start-2 row-span-2 ${items[7].colorClass}`}
+      >
+        <h3 class="text-3xl font-semibold">{items[7].name}</h3>
+        <p class="opacity-80">{items[7].description}</p>
       </div>
 
       <!-- 10 -->
-      <div class={`bento col-span-1 sm:col-span-2 ${items[9].colorClass}`}>
-        <h3>{items[9].name}</h3>
-        <p>{items[9].description}</p>
+      <div class={`card card-sm col-start-1 row-start-4 ${items[8].colorClass}`}>
+        <h3 class="text-xl font-semibold">{items[8].name}</h3>
+        <p class="opacity-80">{items[8].description}</p>
       </div>
 
       <!-- 11 -->
-      <div class={`bento ${items[10].colorClass}`}>
-        <h3>{items[10].name}</h3>
-        <p>{items[10].description}</p>
+      <div class={`card card-md col-start-2 col-span-2 row-start-5 ${items[9].colorClass}`}>
+        <h3 class="text-2xl font-semibold">{items[9].name}</h3>
+        <p class="opacity-80">{items[9].description}</p>
       </div>
 
       <!-- 12 -->
-      <div class={`bento ${items[11].colorClass}`}>
-        <h3>{items[11].name}</h3>
-        <p>{items[11].description}</p>
+      <div class={`card card-sm col-start-4 row-start-5 ${items[10].colorClass}`}>
+        <h3 class="text-xl font-semibold">{items[10].name}</h3>
+        <p class="opacity-80">{items[10].description}</p>
       </div>
 
+      <!-- 13 -->
+      <div
+        class={`card card-lg col-start-5 col-span-2 row-start-4 row-span-2 ${items[11].colorClass}`}
+      >
+        <h3 class="text-4xl font-semibold">{items[11].name}</h3>
+        <p class="opacity-80">{items[11].description}</p>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .bento {
-    @apply rounded-3xl p-6 backdrop-blur-xl shadow-md
-           flex flex-col justify-between
-           transition-all duration-300
-           hover:-translate-y-1 hover:shadow-xl;
-  }
-
-  .bento h3 {
-    @apply text-xl font-semibold text-white;
-  }
-
-  .bento p {
-    @apply text-sm text-white/70;
-  }
-</style>
