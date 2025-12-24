@@ -44,36 +44,59 @@ const pricing_ins = [
       'Full Project Management',
       'Priority Support',
     ],
+    isPopular: true,
   },
 ];
 ---
 
-<section class="py-16 sm:py-20">
-  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+<section class="relative py-32 sm:pb-20 sm:pt-40">
+  <div
+    class="pointer-events-none absolute inset-x-0 inset-y-[40px] flex items-start justify-center md:inset-y-[90px]"
+  >
+    <h2
+      class="select-none font-bbh text-4xl font-extrabold text-primary-600 dark:text-white/20 md:text-[160px] md:tracking-tight md:blur-sm"
+    >
+      Pricing
+    </h2>
+  </div>
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="-mt-8 grid gap-8 lg:mt-0 lg:grid-cols-3">
       {
         pricing_ins.map((item) => (
           <div
             class:list={[
               'relative flex flex-col gap-8 rounded-3xl p-8',
-              item.isFlagged && 'bg-primary-500/10 dark:bg-primary-400/10',
+              'backdrop-blur-xl',
+              'shadow-xl',
+              'transition-all duration-300',
+              'hover:scale-[1.02] hover:shadow-xl hover:cursor-pointer',
+              (item.isPopular && 'border-2 border-[#A635FF]') || 'border border-white/10',
+              (item.isFlagged && 'bg-primary-700/10 dark:bg-primary-400/10') ||
+                'bg-primary-400/10 dark:bg-primary-800/10',
             ]}
           >
+            {item.isPopular && (
+              <span class="absolute -top-4 right-8 z-10 rounded-full border border-white/10 bg-primary-950/80 px-4 py-1 text-sm text-white backdrop-blur-md">
+                Most Popular
+              </span>
+            )}
             <div class="flex-1">
-              <h2 class="text-xl font-medium">{item.name}</h2>
+              <h2 class="text-xl font-medium dark:text-white">{item.name}</h2>
+
               <p class="mt-4 flex items-baseline">
-                <span class="text-4xl font-medium tracking-tight">{item.price}</span>
-                <span class="ml-1 text-sm font-medium text-primary-950/70 dark:text-primary-200/70">
-                  {item.periodicity}
+                <span class="text-4xl font-medium tracking-tight  dark:text-white">
+                  {item.price}
                 </span>
+                <span class="ml-1 text-sm font-medium  dark:text-white/60">{item.periodicity}</span>
               </p>
-              <p class="mt-6 text-primary-950/70 dark:text-primary-200/70">{item.description}</p>
+
+              <p class="mt-6  dark:text-white/60">{item.description}</p>
 
               <ul role="list" class="mt-6 space-y-6">
                 {item.features.map((feature) => (
-                  <li class="flex gap-3">
+                  <li class="flex gap-3  dark:text-white/70">
                     <svg
-                      class="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
+                      class="h-6 w-6 flex-shrink-0  dark:text-white/60"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -88,9 +111,14 @@ const pricing_ins = [
             </div>
             <a
               href={item.href}
-              class="inline-flex w-full items-center justify-center rounded-full border border-transparent bg-primary-600 px-5 py-3 text-base font-medium text-white transition hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-400 dark:text-primary-950 dark:hover:bg-primary-300 dark:focus-visible:outline-primary-400"
+              class:list={[
+                'inline-flex w-full items-center justify-center rounded-full border px-5 py-3 text-base font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+                item.price === 'Custom'
+                  ? 'border-primary-600 text-primary-600 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-900/10'
+                  : 'border-transparent bg-primary-600 text-white hover:bg-primary-700 focus-visible:outline-primary-600 dark:bg-primary-400 dark:text-primary-950 dark:hover:bg-primary-300 dark:focus-visible:outline-primary-400',
+              ]}
             >
-              Purchase
+              {item.action}
             </a>
           </div>
         ))
@@ -98,3 +126,4 @@ const pricing_ins = [
     </div>
   </div>
 </section>
+

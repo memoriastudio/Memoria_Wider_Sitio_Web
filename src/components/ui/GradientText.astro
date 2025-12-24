@@ -1,0 +1,76 @@
+---
+interface Props {
+  colors?: string[];
+  animationSpeed?: number;
+  showBorder?: boolean;
+  class?: string;
+}
+
+const {
+  colors = ['#ffaa40', '#9c40ff', '#ffaa40'],
+  animationSpeed = 8,
+  showBorder = false,
+  class: className = '',
+} = Astro.props;
+
+const gradientString = colors.join(', ');
+const gradientStyle = {
+  backgroundImage: `linear-gradient(to right, ${gradientString})`,
+  backgroundSize: '300% 100%',
+  animation: `gradient ${animationSpeed}s linear infinite`,
+};
+---
+
+<div
+  class:list={[
+    'relative mx-auto flex max-w-fit cursor-pointer flex-row items-center justify-center overflow-hidden rounded-[1.25rem] font-medium backdrop-blur transition-shadow duration-500',
+    className,
+  ]}
+>
+  {
+    showBorder && (
+      <div
+        class="match-motion-safe pointer-events-none absolute inset-0 z-0 bg-cover"
+        style={gradientStyle}
+      >
+        <div
+          class="bg-black absolute inset-0 z-[-1] rounded-[1.25rem]"
+          style={{
+            width: 'calc(100% - 2px)',
+            height: 'calc(100% - 2px)',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+      </div>
+    )
+  }
+  <div
+    class="relative z-10 inline-block bg-cover text-transparent"
+    style={{
+      ...gradientStyle,
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
+    }}
+  >
+    <slot />
+  </div>
+</div>
+
+<style is:global>
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .animate-gradient {
+    animation: gradient 8s linear infinite;
+  }
+</style>

@@ -70,7 +70,6 @@ import '../../styles/style.css';
       <!-- 8 – LOGO CENTRAL -->
       <div
         class={`
-          card card-lg
           md:col-start-2 md:col-span-3
           md:row-start-3 md:row-span-2
           flex items-center justify-center
@@ -78,11 +77,12 @@ import '../../styles/style.css';
           card-radial
         `}
       >
-        <!-- Logo claro (para dark mode) -->
+        <!-- Logo (cambia según el tema) -->
         <img
+          src="/assets/logo-black.png"
           :src="$store.theme.isDark ? '/assets/logo-light.png' : '/assets/logo-black.png'"
           alt="Logo Memoria Wider"
-          class="hidden h-[390px] w-[390px] object-contain dark:block"
+          class="h-[390px] w-[390px] object-contain"
         />
       </div>
 

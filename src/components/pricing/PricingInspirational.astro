@@ -18,6 +18,7 @@ const pricing_ins = [
     action: 'Subscribe',
     href: 'https://buy.stripe.com/3cIaEW55H8ej7kAaXK9sk01',
     features: ['16 ideations per week.', '4 creative variants.', 'Web Platform Delivery.'],
+    isPopular: true,
   },
   {
     name: 'Pro',
@@ -38,7 +39,7 @@ const pricing_ins = [
 
 <section class="relative py-32 sm:pb-20 sm:pt-40">
   <div
-    class="pointer-events-none absolute inset-x-0 inset-y-[-20px] flex items-start justify-center md:inset-y-[90px]"
+    class="pointer-events-none absolute inset-x-0 inset-y-[40px] flex items-start justify-center md:inset-y-[90px]"
   >
     <h2
       class="select-none font-bbh text-4xl font-extrabold text-primary-600 dark:text-white/20 md:text-[160px] md:tracking-tight md:blur-sm"
@@ -53,12 +54,20 @@ const pricing_ins = [
           <div
             class:list={[
               'relative flex flex-col gap-8 rounded-3xl p-8',
-              'border border-white/10  backdrop-blur-xl',
+              'backdrop-blur-xl',
               'shadow-xl',
+              'transition-all duration-300',
+              'hover:scale-[1.02] hover:shadow-xl hover:cursor-pointer',
+              (item.isPopular && 'border-2 border-[#A635FF]') || 'border border-white/10',
               (item.isFlagged && 'bg-primary-700/10 dark:bg-primary-400/10') ||
                 'bg-primary-400/10 dark:bg-primary-800/10',
             ]}
           >
+            {item.isPopular && (
+              <span class="absolute -top-4 right-8 z-10 rounded-full border border-white/10 bg-primary-950/80 px-4 py-1 text-sm text-white backdrop-blur-md">
+                Most Popular
+              </span>
+            )}
             <div class="flex-1">
               <h2 class="text-xl font-medium dark:text-white">{item.name}</h2>
 

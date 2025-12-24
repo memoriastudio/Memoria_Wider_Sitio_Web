@@ -9,6 +9,7 @@ import Bento12 from '../components/home/Bento12.astro';
 import '../styles/style.css';
 import ServicesHome from '../components/home/ServicesHome.astro';
 import CallToAction from '../components/home/CallToAction.astro';
+import GradientText from '../components/ui/GradientText.astro';
 ---
 
 <Layout
@@ -16,26 +17,28 @@ import CallToAction from '../components/home/CallToAction.astro';
   title="Home · Memoria Wider"
 >
   <!--Inicio Hero-->
-  <section class="relative mx-auto h-full md:h-[800px] max-w-7xl p-4">
-    <div class="flex h-full flex-col-reverse md:flex-row items-center">
+  <section class="relative mx-auto h-full max-w-7xl p-4 md:h-[800px]">
+    <div class="flex h-full flex-col-reverse items-center md:flex-row">
       <img
         src="/assets/fondo-headers.png"
-        class="inset-0 z-[-10] hidden md:block w-full opacity-50 invert dark:invert-0 md:absolute md:translate-x-[40px] md:translate-y-[-210px] md:scale-x-[-1]"
+        class="inset-0 z-[-10] hidden w-full opacity-50 invert dark:invert-0 md:absolute md:block md:translate-x-[40px] md:translate-y-[-210px] md:scale-x-[-1]"
         alt=""
       />
-      <div class="max-w-xl flex flex-col items-center justify-center md:items-start gap-4 sm:gap-6 ">
+      <div class="flex max-w-xl flex-col items-center justify-center gap-4 sm:gap-6 md:items-start">
         <img
-          class="absolute hidden z-[-10] w-[330px] translate-x-[-10px] translate-y-[-140px] md:block"
-          src="/assets/img-text-header.png "  
+          class="absolute z-[-10] hidden w-[330px] translate-x-[-10px] translate-y-[-140px] md:block"
+          src="/assets/img-text-header.png "
           alt="Memoria Wider"
         />
         <h1
-          class="font-Satoshi text-5xl font-semibold [text-shadow:0_2px_4px_rgba(0,0,0,0.9)] lg:text-6xl text-center md:text-left"
+          class="text-center font-Satoshi text-5xl font-semibold [text-shadow:0_2px_4px_rgba(0,0,0,0.9)] md:text-left lg:text-6xl"
         >
           Inspiration for What Comes Next
         </h1>
 
-        <p class="mt-4 text-lg [text-shadow:0_1px_3px_rgba(0,0,0,0.5)] sm:text-xl text-center md:text-left">
+        <p
+          class="mt-4 text-center text-lg [text-shadow:0_1px_3px_rgba(0,0,0,0.5)] sm:text-xl md:text-left"
+        >
           Find the spark to build what’s next — and make it real with Memoria Wider.
         </p>
         <a href="/inspirational" class="btn-53 inline-block w-48 bg-memoria/70 dark:bg-memoria/70">
