@@ -16,27 +16,26 @@ import CallToAction from '../components/home/CallToAction.astro';
   title="Home · Memoria Wider"
 >
   <!--Inicio Hero-->
-  <section class="relative mx-auto h-[800px] max-w-7xl">
-    <div class="flex h-full items-center">
+  <section class="relative mx-auto h-full md:h-[800px] max-w-7xl p-4">
+    <div class="flex h-full flex-col-reverse md:flex-row items-center">
       <img
         src="/assets/fondo-headers.png"
-        class="absolute inset-0 z-[-10] w-full opacity-50 invert dark:invert-0 md:translate-x-[40px] md:translate-y-[-210px] md:scale-x-[-1]"
+        class="inset-0 z-[-10] hidden md:block w-full opacity-50 invert dark:invert-0 md:absolute md:translate-x-[40px] md:translate-y-[-210px] md:scale-x-[-1]"
         alt=""
       />
-
-      <div class="max-w-xl flex-col items-start gap-4 sm:gap-6">
+      <div class="max-w-xl flex flex-col items-center justify-center md:items-start gap-4 sm:gap-6 ">
         <img
-          class="absolute z-[-10] w-[330px] translate-x-[-10px]"
-          src="/assets/img-text-header.png "
+          class="absolute hidden z-[-10] w-[330px] translate-x-[-10px] translate-y-[-140px] md:block"
+          src="/assets/img-text-header.png "  
           alt="Memoria Wider"
         />
         <h1
-          class="font-Satoshi text-4xl font-semibold [text-shadow:0_2px_4px_rgba(0,0,0,0.9)] sm:text-5xl lg:text-6xl"
+          class="font-Satoshi text-5xl font-semibold [text-shadow:0_2px_4px_rgba(0,0,0,0.9)] lg:text-6xl text-center md:text-left"
         >
           Inspiration for What Comes Next
         </h1>
 
-        <p class="mt-4 text-lg [text-shadow:0_1px_3px_rgba(0,0,0,0.5)] sm:text-xl">
+        <p class="mt-4 text-lg [text-shadow:0_1px_3px_rgba(0,0,0,0.5)] sm:text-xl text-center md:text-left">
           Find the spark to build what’s next — and make it real with Memoria Wider.
         </p>
         <a href="/inspirational" class="btn-53 inline-block w-48 bg-memoria/70 dark:bg-memoria/70">

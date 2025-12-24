@@ -26,13 +26,13 @@ const service = [
 <section class="py-16 sm:py-20">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col gap-12 sm:gap-16">
-      <h2 class="font-bbh-bartle mb-16 text-center text-2xl sm:text-4xl">
+      <h2 class="font-bbh-bartle mb-16 text-center text-3xl sm:text-4xl">
         Services Built to Transform Ideas into Results
       </h2>
-      <div class="grid gap-20 md:gap-8 lg:mt-0 lg:grid-cols-2">
+      <div class="grid justify-items-center gap-20 md:gap-8 lg:mt-0 lg:grid-cols-2">
         {
           service.map((item) => (
-            <div class=" relative flex h-full w-full flex-col rounded-xl bg-primary-500/30 bg-clip-border shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl md:w-[460px]">
+            <div class=" relative flex h-full w-full flex-col rounded-xl bg-primary-500/30 bg-clip-border shadow-lg transition-all duration-300 hover:-translate-y-4 hover:scale-[1.02] hover:shadow-xl md:w-[460px]">
               <div class="group relative mx-4 -mt-8 h-52 overflow-hidden rounded-xl bg-clip-border shadow-lg">
                 <img src={item.imageSrc} alt={item.name} class="h-full w-full object-cover" />
               </div>
@@ -40,7 +40,7 @@ const service = [
                 <h2 class=" mb-2 block text-4xl font-semibold leading-snug tracking-normal antialiased transition-colors duration-300">
                   {item.name}
                 </h2>
-                <p class="block text-xl font-light leading-relaxed antialiased">
+                <p class="block text-lg font-light leading-relaxed antialiased">
                   {item.description}
                 </p>
               </div>
