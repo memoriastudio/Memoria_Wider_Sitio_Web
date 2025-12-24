@@ -44,7 +44,7 @@ const { items } = Astro.props as { items: Item[] };
         transition hover:scale-[1.02] flex flex-col gap-4
         ${items[2].colorClass}`}>
         <h3 class="text-xl font-semibold">{items[2].name}</h3>
-        <p class="text-sm opacity-80">{items[2].description}</p>
+        <p class="max-md:text-base opacity-80">{items[2].description}</p>
       </div>
 
       <!-- D -->
@@ -83,7 +83,7 @@ const { items } = Astro.props as { items: Item[] };
         transition hover:scale-[1.02] 
         ${items[6].colorClass}`}>
         <h3 class="text-2xl md:text-xl font-semibold">{items[6].name}</h3>
-        <p class="text-lg opacity-80">{items[6].description}</p>
+        <p class="max-md:text-lg opacity-80">{items[6].description}</p>
       </div>
 
       <!-- i -->
