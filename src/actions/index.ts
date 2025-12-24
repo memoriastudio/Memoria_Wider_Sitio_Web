@@ -5,20 +5,19 @@ import { Resend } from 'resend';
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const server = {
-    send: defineAction({
-        accept: 'form',
-        input: z.object({
-            fullName: z.string(),
-            email: z.string().email(),
-            message: z.string(),
-        }),
-        handler: async ({ fullName, email, message }) => {
-
-            const { data, error } = await resend.emails.send({
-                from: 'Memoria Studio - Web Form Docs <onboarding@resend.dev>',
-                to: ['wider@memoriastudio.net'],
-                subject: `Enviado desde Memoria Docs — New Message from ${fullName}`,
-                html: `
+  send: defineAction({
+    accept: 'form',
+    input: z.object({
+      fullName: z.string(),
+      email: z.string().email(),
+      message: z.string(),
+    }),
+    handler: async ({ fullName, email, message }) => {
+      const { data, error } = await resend.emails.send({
+        from: 'Memoria Studio - Web Form Docs <onboarding@resend.dev>',
+        to: ['wider@memoriastudio.net'],
+        subject: `Enviado desde Memoria Docs — New Message from ${fullName}`,
+        html: `
                 <div style="max-width: 1000px; margin: auto; width: 100%; height: 100%;">
                     <header style="width: 90%; height: auto; margin: auto; background-color: #F7F2FF; border-radius: 30px; text-align: center; padding: 1.25rem; color: #303030;">
                         <img src="https://i.postimg.cc/dtrmzp7Z/bf6769be29ba5bee97139e13a09ab829.png" alt="Logo Memoria Studio" width="150" height="150" />
@@ -44,16 +43,16 @@ export const server = {
                         </div>
                     </div>
                 </div>`,
-            });
+      });
 
-            if (error) {
-                throw new ActionError({
-                    code: 'BAD_REQUEST',
-                    message: error.message,
-                });
-            }
+      if (error) {
+        throw new ActionError({
+          code: 'BAD_REQUEST',
+          message: error.message,
+        });
+      }
 
-            return data;
-        },
-    }),
+      return data;
+    },
+  }),
 };

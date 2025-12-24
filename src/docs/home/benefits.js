@@ -1,4 +1,3 @@
-
 const benefitsHome = [
   {
     name: 'Perpetual Inspiration, Si claro',

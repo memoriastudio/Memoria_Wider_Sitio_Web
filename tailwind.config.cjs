@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -16,7 +15,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
-      bbh: ['BBH Bartle', 'sans-serif'], 
+      bbh: ['BBH Bartle', 'sans-serif'],
       Satoshi: ['Satoshi', 'sans-serif'],
     },
     fontSize: {
