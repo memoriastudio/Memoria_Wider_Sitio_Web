@@ -14,7 +14,7 @@ const benefitsHome = [
   {
     name: 'Creative Energy Restored',
     description:
-      'Experience less burnout. Offload the production burden to us and dedicate your energy where it matters most.',
+      'Reduce burnout and regain clarity. By taking the production workload off your plate, we help you focus on what truly matters —    creating, growing, and pushing your ideas forward.',
     colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]', // Medio
   },
   {
@@ -36,12 +36,6 @@ const benefitsHome = [
     colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
   },
   {
-    name: 'Rich, Engaging Content',
-    description:
-      'Enrich your videos with more on-screen elements for truly captivating content that boosts engagement.',
-    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
-  },
-  {
     name: 'Stay Ahead of the Curve',
     description:
       'Always be up-to-date with current trends. We ensure your content is relevant and competitive in the industry.',
@@ -58,6 +52,12 @@ const benefitsHome = [
     description:
       'Achieve full concentration on your message and creative process. We eliminate distractions so you focus on your core genius.',
     colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
+  },
+  {
+    name: 'Rich, Engaging Content',
+    description:
+      'Enrich your videos with more on-screen elements for truly captivating content that boosts engagement.',
+    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
   },
   {
     name: 'Professional Grade Polish',
