@@ -48,10 +48,22 @@ const gradient = safeColors.join(', ');
   .flip-words {
     position: relative;
     display: inline-block;
-    /* overflow: hidden; Removed to allow blur/movement to extend outside */
+    overflow: hidden; /* Mobile: Contain layout */
     vertical-align: bottom;
   }
 
+  /* Desktop: Allow animation to overflow for diffused effect */
+  @media (min-width: 640px) {
+    .flip-words {
+      overflow: visible;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .flip-words {
+      overflow:;
+    }
+  }
   .phrase {
     white-space: nowrap;
   }
