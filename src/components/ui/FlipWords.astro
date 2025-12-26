@@ -1,0 +1,211 @@
+---
+interface Props {
+  words: string[];
+  duration?: number;
+  className?: string;
+}
+
+const { words, duration = 3000, className = '' } = Astro.props;
+---
+
+<div
+  class={`flip-words-wrapper ${className}`}
+  data-words={JSON.stringify(words)}
+  data-duration={duration}
+>
+  <div class="phrase active relative z-10 inline-block whitespace-nowrap px-2 text-center">
+    {
+      words[0].split(' ').map((word, wordIndex) => (
+        <span class="inline-block whitespace-nowrap">
+          {word.split('').map((letter, letterIndex) => (
+            <span
+              class="letter inline-block"
+              style={`animation-delay: ${wordIndex * 0.3 + letterIndex * 0.05}s;`}
+            >
+              {letter}
+            </span>
+          ))}
+          <span class="inline-block">&nbsp;</span>
+        </span>
+      ))
+    }
+  </div>
+</div>
+
+<style is:global>
+  .flip-words-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* PHRASE (Wrapper) Animations */
+  .flip-words-wrapper .phrase {
+    backface-visibility: hidden;
+  }
+
+  .flip-words-wrapper .phrase.entering {
+    /* No phrase-level animation needed for enter */
+  }
+
+  /* Exit Animation: Absolute to overlap, fly away */
+  .flip-words-wrapper .phrase.exiting {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: flip-phrase-exit 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  /* LETTER Animations */
+  .flip-words-wrapper .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(8px);
+    animation: flip-letter-enter 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  /* Initial static state: visible */
+  .flip-words-wrapper .phrase.active .letter {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    animation: none;
+  }
+
+  /* When entering, animate */
+  .flip-words-wrapper .phrase.entering .letter {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(8px);
+    animation: flip-letter-enter 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  @keyframes flip-phrase-exit {
+    0% {
+      opacity: 1;
+      transform: translateY(0) translateX(0) scale(1);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-40px) translateX(40px) scale(2);
+      filter: blur(8px);
+    }
+  }
+
+  @keyframes flip-letter-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+      filter: blur(8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+</style>
+
+<script>
+  class FlipWords {
+    container: HTMLElement;
+    words: string[];
+    duration: number;
+    currentIndex: number;
+    isAnimating: boolean;
+
+    constructor(el: HTMLElement) {
+      this.container = el;
+      this.words = JSON.parse(el.dataset.words || '[]');
+      this.duration = Number(el.dataset.duration) || 3000;
+      this.currentIndex = 0;
+      this.isAnimating = false;
+
+      // Ensure initial state is clean
+      const initial = this.container.querySelector('.phrase');
+      if (initial) initial.classList.add('active');
+
+      if (this.words.length > 1) {
+        this.startLoop();
+      }
+    }
+
+    startLoop() {
+      setTimeout(() => {
+        this.animateWord();
+      }, this.duration);
+    }
+
+    animateWord() {
+      if (this.isAnimating) return;
+      this.isAnimating = true;
+
+      const currentPhraseEl = this.container.querySelector('.phrase.active');
+      const nextIndex = (this.currentIndex + 1) % this.words.length;
+      const nextPhraseText = this.words[nextIndex];
+
+      // 1. Exit current phrase
+      if (currentPhraseEl) {
+        currentPhraseEl.classList.remove('active', 'relative');
+        currentPhraseEl.classList.add('exiting');
+      }
+
+      // 2. Prepare next phrase
+      const nextPhraseEl = document.createElement('div');
+      // "entering" triggers the letter animations
+      nextPhraseEl.className =
+        'phrase active entering relative inline-block whitespace-nowrap text-left z-10 px-2';
+
+      nextPhraseText.split(' ').forEach((word, wordIndex) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'inline-block whitespace-nowrap';
+
+        word.split('').forEach((char, letterIndex) => {
+          const letterSpan = document.createElement('span');
+          letterSpan.textContent = char;
+          letterSpan.className = 'letter inline-block';
+
+          // Add delay to ensure sequential feel: wait 0.2s then stagger
+          const delay = 0.2 + wordIndex * 0.3 + letterIndex * 0.05;
+          letterSpan.style.animationDelay = `${delay}s`;
+
+          wordSpan.appendChild(letterSpan);
+        });
+
+        const spaceSpan = document.createElement('span');
+        spaceSpan.className = 'inline-block';
+        spaceSpan.innerHTML = '&nbsp;';
+        wordSpan.appendChild(spaceSpan);
+
+        nextPhraseEl.appendChild(wordSpan);
+      });
+
+      this.container.appendChild(nextPhraseEl);
+
+      // 3. Cleanup
+      setTimeout(() => {
+        if (currentPhraseEl) {
+          currentPhraseEl.remove();
+        }
+        nextPhraseEl.classList.remove('entering');
+        // After removing 'entering', letters revert to base style?
+        // We need them to STAY visible.
+        // .phrase.active .letter rules handle this.
+
+        this.currentIndex = nextIndex;
+        this.isAnimating = false;
+
+        this.startLoop();
+      }, 1500); // 1.5s cleanup buffer
+    }
+  }
+
+  document.querySelectorAll('.flip-words-wrapper').forEach((el) => {
+    new FlipWords(el as HTMLElement);
+  });
+</script>
