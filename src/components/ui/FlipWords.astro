@@ -33,10 +33,7 @@ const gradient = safeColors.join(', ');
       words[0].split(' ').map((word, wi) => (
         <span class="word">
           {word.split('').map((char, li) => (
-            <span
-              class="letter"
-              style={`animation-delay:${wi * 0.3 + li * 0.05}s`}
-            >
+            <span class="letter" style={`animation-delay:${wi * 0.3 + li * 0.05}s`}>
               {char}
             </span>
           ))}
@@ -51,6 +48,8 @@ const gradient = safeColors.join(', ');
   .flip-words {
     position: relative;
     display: inline-block;
+    overflow: hidden; /* Prevents animation from breaking layout */
+    vertical-align: bottom; /* Aligns correctly with text */
   }
 
   .phrase {
@@ -81,8 +80,7 @@ const gradient = safeColors.join(', ');
 
   .phrase.active .letter {
     transform: translateY(0);
-    animation:
-      gradient-move var(--speed) linear infinite;
+    animation: gradient-move var(--speed) linear infinite;
   }
 
   @keyframes letter-enter {
@@ -95,17 +93,45 @@ const gradient = safeColors.join(', ');
   }
 
   @keyframes phrase-exit {
-    to {
+    /* Desktop: Fly away */
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+      filter: blur(0);
+    }
+    100% {
       transform: translate(40px, -40px) scale(2);
-      filter: blur(8px);
       opacity: 0;
+      filter: blur(8px);
+    }
+  }
+
+  /* Mobile adjustment: Fade out only, no large translate/scale */
+  @media (max-width: 640px) {
+    @keyframes phrase-exit {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+      100% {
+        transform: translate(0, -10px) scale(1.1); /* Subtle move up */
+        opacity: 0;
+        filter: blur(4px);
+      }
     }
   }
 
   @keyframes gradient-move {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 </style>
 
@@ -168,7 +194,7 @@ const gradient = safeColors.join(', ');
     }
   }
 
-  document.querySelectorAll('.flip-words').forEach(el => {
+  document.querySelectorAll('.flip-words').forEach((el) => {
     new FlipWords(el);
   });
 </script>
