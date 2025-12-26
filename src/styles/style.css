@@ -57,6 +57,7 @@
 .css-1qzevvg {
   margin: 0 auto !important;
 }
+
 .css-1qzevvg:hover {
   cursor: pointer !important;
 }
@@ -69,41 +70,19 @@
 .card {
   @apply relative flex flex-col
          gap-4 rounded-3xl
-         p-6 shadow-md backdrop-blur-xl
+         p-4 shadow-md backdrop-blur-xl
          transition hover:scale-[1.02] hover:shadow-xl;
 }
 
-.card-sm {
-  @apply text-sm;
+.card h3 {
+  @apply font-poppins;
 }
 
-.card-md {
-  @apply text-base;
-}
-
-.card-lg {
-  @apply text-lg;
-}
 .card-radial {
   position: relative;
   overflow: hidden;
 }
 
-.card-radial::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(139, 92, 246, 0.18) 0%,
-    rgba(139, 92, 246, 0.12) 25%,
-    rgba(139, 92, 246, 0.06) 50%,
-    transparent 80%
-  );
-  pointer-events: none;
-}
-/* From Uiverse.io by doniaskima */
 .btn-53,
 .btn-53 *,
 .btn-53 :after,
