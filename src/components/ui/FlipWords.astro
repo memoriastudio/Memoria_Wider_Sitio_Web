@@ -48,8 +48,8 @@ const gradient = safeColors.join(', ');
   .flip-words {
     position: relative;
     display: inline-block;
-    overflow: hidden; /* Prevents animation from breaking layout */
-    vertical-align: bottom; /* Aligns correctly with text */
+    /* overflow: hidden; Removed to allow blur/movement to extend outside */
+    vertical-align: bottom;
   }
 
   .phrase {
