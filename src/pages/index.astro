@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import ServiceTable from '../components/pricing/ServiceTable.astro';
 import Faq from '../components/home/faq.astro';
 import Cta from '../components/home/Cta.astro';
-import BenefitsReutilizable from '../components/home/BenefitsReutilizable.astro';
 import benefitsHome from '../docs/home/benefits.js';
 import Bento12 from '../components/home/Bento12.astro';
 import '../styles/style.css';
@@ -184,11 +183,12 @@ import GradientText from '../components/ui/GradientText.astro';
       </div>
     </div>
   </section>
-  <BenefitsReutilizable title="The Results You're Looking For..." items={benefitsHome} />
+
+  <!-- <BenefitsReutilizable title="The Results You're Looking For..." items={benefitsHome} /> -->
   <Bento12 items={benefitsHome} />
 
   <ServicesHome />
-  <ServiceTable />
+  <!-- <ServiceTable /> -->
 
   <Faq />
 
