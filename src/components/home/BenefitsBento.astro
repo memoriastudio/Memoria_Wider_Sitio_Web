@@ -24,11 +24,11 @@ const { items } = Astro.props as { items: Item[] };
       <!-- A -->
       <div class={`relative rounded-3xl p-6 backdrop-blur-xl shadow-md
         transition hover:scale-[1.02] hover:shadow-xl
-        flex flex-col gap-4 md:gap-8
+        flex flex-col gap-4 lg:gap-8
         lg:row-span-2
         ${items[0].colorClass}`}>
-        <h3 class="text-2xl md:text-6xl font-semibold">{items[0].name}</h3>
-        <p class="text-lg opacity-80">{items[0].description}</p>
+        <h3 class="text-2xl md:text-xl lg:text-6xl font-semibold">{items[0].name}</h3>
+        <p class="text-lg md:text-base lg:text-lg opacity-80">{items[0].description}</p>
       </div>
 
       <!-- B -->
@@ -52,7 +52,7 @@ const { items } = Astro.props as { items: Item[] };
         transition hover:scale-[1.02]
         lg:row-span-2 flex flex-col gap-4
         ${items[3].colorClass}`}>
-        <h3 class="text-2xl md:text-5xl font-semibold">{items[3].name}</h3>
+        <h3 class="text-2xl md:text-xl lg:text-6xl font-semibold">{items[3].name}</h3>
         <p class="text-lg opacity-80">{items[3].description}</p>
       </div>
 
@@ -61,10 +61,10 @@ const { items } = Astro.props as { items: Item[] };
         transition hover:scale-[1.02]
         lg:col-span-2 row-span-2
         bg-primary-400/50 dark:bg-primary-900/50 `}>
-        <h3 class="text-3xl md:text-6xl font-black leading-tight">
+        <h3 class="text-3xl md:text-4xl lg:text-6xl font-black leading-tight">
           {items[4].name}
         </h3>
-        <p class="mt-4 text-xl opacity-90">
+        <p class="mt-4 text-lg md:text-lg lg:text-2xl opacity-90">
           {items[4].description}
         </p>
       </div>
@@ -74,7 +74,7 @@ const { items } = Astro.props as { items: Item[] };
         transition hover:scale-[1.02]
         lg:row-span-2 flex flex-col md:gap-6 gap-4
         ${items[5].colorClass}`}>
-        <h3 class="text-2xl md:text-4xl font-semibold">{items[5].name}</h3>
+        <h3 class="text-2xl md:text-xl lg:text-4xl font-semibold">{items[5].name}</h3>
         <p class="text-lg opacity-80">{items[5].description}</p>
       </div>
 
@@ -101,8 +101,8 @@ const { items } = Astro.props as { items: Item[] };
         row-span-2
         md:row-span-1
         ${items[8].colorClass}`}>
-        <h3 class="text-4xl font-semibold">{items[8].name}</h3>
-        <p class="text-xl md:text-base opacity-80">{items[8].description}</p>
+        <h3 class="text-4xl md:text-2xl lg:text-4xl font-semibold">{items[8].name}</h3>
+        <p class="text-xl md:text-sm lg:text-base opacity-80">{items[8].description}</p>
       </div>
 
     </div>
