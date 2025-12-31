@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wider.memoriastudio.net/sitemap-index.xml
