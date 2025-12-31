@@ -3,12 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import Inspiratiogrid from '../components/home/inspiratiogrid.astro';
 import Services from '../components/home/services.astro';
 import PricingInspirational from '../components/pricing/PricingInspirational.astro';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Inspirational Report',
+  provider: {
+    '@type': 'Organization',
+    name: 'Memoria Studio',
+    url: 'https://memoriastudio.net',
+  },
+  description:
+    "Weekly creative direction and ideations tailored to your channel and what's trending.",
+};
 ---
 
 <Layout
   description="From the minds at Memoria Studio — discover how we build, scale, and share creative systems."
   title="Inspirational · Memoria Wider"
+  canonical="/inspirational"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <section class="px-4 md:py-12">
     <div class="mx-auto max-w-2xl lg:max-w-7xl lg:px-4">
       <div class="grid gap-12 pb-20 lg:grid-cols-2 lg:gap-12">

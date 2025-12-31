@@ -9,19 +9,30 @@ import '../styles/style.css';
 import ServicesHome from '../components/home/ServicesHome.astro';
 import CallToAction from '../components/home/CallToAction.astro';
 import GradientText from '../components/ui/GradientText.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Memoria Wider',
+  url: Astro.site?.toString() || 'https://memoriastudio.net',
+  description: 'Inspiration for What Comes Next — Build, scale, and share creative systems.',
+};
 ---
 
 <Layout
   description="From the minds at Memoria Studio — discover how we build, scale, and share creative systems."
   title="Home · Memoria Wider"
+  canonical="/"
 >
-  <!--Inicio Hero-->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <section class="relative mx-auto h-full max-w-7xl p-4 md:h-[800px]">
     <div class="flex h-full flex-col-reverse items-center md:flex-row">
       <img
         src="/assets/fondo-headers.png"
         class="inset-0 z-[-10] hidden w-full opacity-50 invert dark:invert-0 md:absolute md:block md:translate-x-[40px] md:translate-y-[-210px] md:scale-x-[-1]"
-        alt=""
+        alt="Background abstract pattern"
+        width="1920"
+        height="1080"
       />
       <div class="flex max-w-xl flex-col items-center justify-center gap-4 sm:gap-6 md:items-start">
         <img
