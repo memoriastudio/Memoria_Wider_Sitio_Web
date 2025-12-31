@@ -1,30 +1,87 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/style.css';
 ---
 
 <Layout
   description="Page not found. Please check the URL in the address bar and try again."
   title="Not found · Memoria Wider"
 >
-  <section class="py-16 sm:py-20">
-    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-      <div class="flex flex-col items-start gap-8 sm:gap-10">
-        <div class="flex flex-col gap-4 sm:gap-6">
-          <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
-            <div>404</div>
-            <div>Page not found</div>
-          </h1>
-          <p class="text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl">
-            Please check the URL in the address bar and try again.
-          </p>
+  <div class="main_wrapper">
+    <div class="main">
+      <div class="antenna">
+        <div class="antenna_shadow"></div>
+        <div class="a1"></div>
+        <div class="a1d"></div>
+        <div class="a2"></div>
+        <div class="a2d"></div>
+        <div class="a_base"></div>
+      </div>
+      <div class="tv">
+        <div class="cruve">
+          <svg
+            class="curve_svg"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 189.929 189.929"
+            xml:space="preserve"
+          >
+            <path
+              d="M70.343,70.343c-30.554,30.553-44.806,72.7-39.102,115.635l-29.738,3.951C-5.442,137.659,11.917,86.34,49.129,49.13
+        C86.34,11.918,137.664-5.445,189.928,1.502l-3.95,29.738C143.041,25.54,100.895,39.789,70.343,70.343z"
+            ></path>
+          </svg>
         </div>
-        <a
-          href="/"
-          class="inline-flex items-center justify-center rounded-full border border-transparent bg-primary-600 px-5 py-3 text-base font-medium text-white transition hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-400 dark:text-primary-950 dark:hover:bg-primary-300 dark:focus-visible:outline-primary-400"
-        >
-          Go back home
-        </a>
+        <div class="display_div">
+          <div class="screen_out">
+            <div class="screen_out1">
+              <div class="screen">
+                <span class="notfound_text"> NOT FOUND</span>
+              </div>
+              <div class="screenM">
+                <span class="notfound_text"> NOT FOUND</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lines">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <div class="buttons_div">
+          <div class="b1"><div></div></div>
+          <div class="b2"></div>
+          <div class="speakers">
+            <div class="g1">
+              <div class="g11"></div>
+              <div class="g12"></div>
+              <div class="g13"></div>
+            </div>
+            <div class="g"></div>
+            <div class="g"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="base1"></div>
+        <div class="base2"></div>
+        <div class="base3"></div>
       </div>
     </div>
-  </section>
+    <div class="text_404">
+      <div class="text_4041">4</div>
+      <div class="text_4042">0</div>
+      <div class="text_4043">4</div>
+    </div>
+    <div class="translate-y-16">
+      <a
+        href="/"
+        class="flex items-center rounded-lg bg-primary-900/10 px-6 py-2 text-sm transition hover:bg-primary-900/20 dark:bg-white/10 dark:hover:bg-white/20"
+      >
+        Return to Home
+      </a>
+    </div>
+  </div>
 </Layout>
