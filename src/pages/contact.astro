@@ -4,12 +4,41 @@ import Benefits from '../components/home/Benefits.astro';
 import ServiceTable from '../components/pricing/ServiceTable.astro';
 import Faq from '../components/home/faq.astro';
 import ContactForm from '../components/contact/ContactForm.astro';
+import ContactSection from '../components/contact/ContactSection.astro';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Memoria Wider',
+  description: 'Get in touch with Memoria Studio for web design and development inquiries.',
+  url: new URL('/contact', Astro.site).toString(),
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Memoria Studio',
+    url: Astro.site?.toString(),
+    logo: new URL('/assets/logo-black.png', Astro.site).toString(),
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'wider@memoriastudio.net',
+      contactType: 'customer support',
+    },
+    sameAs: [
+      'https://www.facebook.com/profile.php?id=100090692651300',
+      'https://www.instagram.com/memoriastudio_llc/',
+      'https://www.linkedin.com/company/memoria-studio-llc/',
+    ],
+  },
+};
 ---
 
 <Layout
   description="From the minds at Memoria Studio — discover how we build, scale, and share creative systems."
-  title="Home · Memoria Wider">
+  title="Contact · Memoria Wider"
+  canonical="/contact"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-<ContactForm />
+  <!-- <ContactForm /> -->
+
+  <ContactSection />
 </Layout>
