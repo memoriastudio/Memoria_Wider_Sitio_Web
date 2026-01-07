@@ -48,16 +48,16 @@ const benefitsHome = [
     colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
   },
   {
-    name: 'Unwavering Focus',
-    description:
-      'Achieve full concentration on your message and creative process. We eliminate distractions so you focus on your core genius.',
-    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
-  },
-  {
     name: 'Rich, Engaging Content',
     description:
       'Enrich your videos with more on-screen elements for truly captivating content that boosts engagement.',
     colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
+  },
+  {
+    name: 'Unwavering Focus',
+    description:
+      'Achieve full concentration on your message and creative process. We eliminate distractions so you focus on your core genius.',
+    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
   },
   {
     name: 'Professional Grade Polish',

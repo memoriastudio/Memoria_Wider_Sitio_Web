@@ -11,30 +11,33 @@ import FlipWords from '../ui/FlipWords.astro';
 import GradientText from '../ui/GradientText.astro';
 ---
 
-<section class="py-32">
-  <div class="py-20"> 
+<section class="max-md:py-20 md:py-32">
+  <div class="py-20">
     <h2
-      class="font-poppins text-center text-5xl font-bold uppercase md:pl-[30%] md:text-left md:text-6xl"
+      class="font-poppins text-center text-4xl text-5xl font-bold uppercase md:pl-[10%] md:text-left lg:pl-[30%] lg:text-6xl"
     >
       Designed for
       <FlipWords words={['creators', 'momentum', 'scale']} />
     </h2>
   </div>
   <div class="mx-auto max-w-7xl px-4">
-    <div class="grid
+    <div
+      class="lg::grid-rows-5
+        grid
         grid-cols-1
         gap-4
-        md:grid-cols-5
-        md:grid-rows-5">
+        md:grid-cols-2
+        lg:grid-cols-5"
+    >
       <!-- 1 -->
-      <div class={`card card-sm md:col-span-2 ${items[0].colorClass}`}>
-        <h3 class="text-4xl font-semibold">{items[0].name}</h3>
+      <div class={`card card-sm lg:col-span-2 ${items[0].colorClass}`}>
+        <h3 class="text-4xl font-semibold lg:text-6xl">{items[0].name}</h3>
         <p class="opacity-80">{items[0].description}</p>
       </div>
 
       <!-- 2 -->
       <div
-        class={`card card-sm md:row-span-2 md:col-start-1 md:row-start-2 ${items[1].colorClass}`}
+        class={`card card-sm lg:row-span-2 lg:col-start-1 lg:row-start-2 ${items[1].colorClass}`}
       >
         <h3 class="text-3xl font-semibold">{items[1].name}</h3>
         <p class="text-xl opacity-80">{items[1].description}</p>
@@ -42,73 +45,73 @@ import GradientText from '../ui/GradientText.astro';
 
       <!-- 3 -->
       <div
-        class={`card card-sm md:col-span-2 md:row-span-2 md:col-start-2 md:row-start-2 ${items[2].colorClass}`}
+        class={`card card-sm lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-2 ${items[2].colorClass}`}
       >
-        <h3 class="text-6xl font-semibold">{items[2].name}</h3>
-        <p class="text-xl opacity-80">{items[2].description}</p>
+        <h3 class="text-3xl font-semibold md:text-4xl lg:text-6xl">{items[2].name}</h3>
+        <p class="text-xl opacity-80 md:text-lg lg:text-xl">{items[2].description}</p>
       </div>
 
       <!-- 4 -->
       <div
-        class={`card card-sm md:col-span-2 md:col-start-3 md:row-start-1 ${items[4].colorClass}`}
+        class={`card card-sm lg:col-span-2 lg:col-start-3 lg:row-start-1 ${items[4].colorClass}`}
       >
-        <h3 class="text-3xl font-semibold">{items[4].name}</h3>
+        <h3 class="text-3xl font-semibold lg:text-5xl">{items[4].name}</h3>
         <p class="text-xl opacity-80">{items[4].description}</p>
       </div>
 
       <!-- 5 -->
-      <div class={`card card-sm md:col-start-5 md:row-start-1 ${items[3].colorClass}`}>
-        <h3 class="text-lg font-semibold">{items[3].name}</h3>
-        <p class="text-sm opacity-80">{items[3].description}</p>
+      <div class={`card card-sm lg:col-start-5 lg:row-start-1 ${items[3].colorClass}`}>
+        <h3 class="text-3xl font-semibold md:text-4xl lg:text-lg">{items[3].name}</h3>
+        <p class="text-sm opacity-80 md:text-lg">{items[3].description}</p>
       </div>
 
       <!-- 6 -->
       <div
-        class={`card card-sm md:col-span-2 md:col-start-4 md:row-start-2 ${items[5].colorClass}`}
+        class={`card card-sm lg:col-span-2 lg:col-start-4 lg:row-start-2 ${items[5].colorClass}`}
       >
-        <h3 class="text-4xl font-semibold">{items[5].name}</h3>
+        <h3 class="text-3xl font-semibold lg:text-4xl">{items[5].name}</h3>
         <p class="text-lg opacity-80">{items[5].description}</p>
       </div>
 
       <!-- 7 -->
       <div
-        class={`card card-sm md:row-span-3 md:col-start-5 md:row-start-3 ${items[6].colorClass}`}
+        class={`card card-sm lg:row-span-3 lg:col-start-5 lg:row-start-3 ${items[6].colorClass}`}
       >
-        <h3 class="text-4xl font-semibold">{items[6].name}</h3>
-        <p class="text-xl opacity-80">{items[6].description}</p>
+        <h3 class="text-4xl font-semibold lg:text-6xl">{items[6].name}</h3>
+        <p class="text-xl opacity-80 lg:text-2xl">{items[6].description}</p>
       </div>
 
       <!-- 8 -->
       <div
-        class={`card card-sm md:row-span-2 md:col-start-4 md:row-start-3 ${items[7].colorClass}`}
+        class={`card card-sm lg:row-span-2 lg:col-start-4 lg:row-start-3 ${items[7].colorClass}`}
       >
         <h3 class="text-3xl font-semibold">{items[7].name}</h3>
         <p class="text-xl opacity-80">{items[7].description}</p>
       </div>
 
       <!-- 9 -->
-      <div class={`card card-sm md:row-span-2 md:row-start-4 ${items[8].colorClass}`}>
-        <h3 class="text-3xl font-semibold">{items[8].name}</h3>
-        <p class="text-xl opacity-80">{items[8].description}</p>
+      <div class={`card card-sm lg:row-span-2 lg:row-start-4 ${items[8].colorClass}`}>
+        <h3 class="text-3xl font-semibold lg:text-4xl">{items[8].name}</h3>
+        <p class="text-2xl opacity-80">{items[8].description}</p>
       </div>
 
       <!-- 10 -->
-      <div class={`card card-sm md:col-start-2 md:row-start-5 ${items[9].colorClass}`}>
-        <h3 class="text-lg font-semibold">{items[9].name}</h3>
-        <p class="text-sm opacity-80">{items[9].description}</p>
+      <div class={`card card-sm lg:col-start-2 lg:row-start-5 ${items[9].colorClass}`}>
+        <h3 class="text-lg font-semibold md:text-4xl lg:text-2xl">{items[9].name}</h3>
+        <p class="text-sm opacity-80 md:text-lg">{items[9].description}</p>
       </div>
 
       <!-- 11 -->
       <div
-        class={`card card-sm md:col-span-2 md:col-start-3 md:row-start-5 ${items[10].colorClass}`}
+        class={`card card-sm lg:col-span-2 lg:col-start-3 lg:row-start-5 ${items[10].colorClass}`}
       >
-        <h3 class="text-3xl font-semibold">{items[10].name}</h3>
-        <p class="text-lg opacity-80">{items[10].description}</p>
+        <h3 class="text-3xl font-semibold lg:text-6xl">{items[10].name}</h3>
+        <p class="text-lg opacity-80 lg:text-xl">{items[10].description}</p>
       </div>
 
       <!-- 12 -->
       <div
-        class={`card card-sm md:col-span-2 md:col-start-2 md:row-start-4 ${items[11].colorClass}`}
+        class={`card card-sm lg:col-span-2 lg:col-start-2 lg:row-start-4 ${items[11].colorClass}`}
       >
         <h3 class="text-3xl font-semibold">{items[11].name}</h3>
         <p class="text-lg opacity-80">{items[11].description}</p>
