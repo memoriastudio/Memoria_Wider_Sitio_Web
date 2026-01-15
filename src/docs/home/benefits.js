@@ -1,74 +1,74 @@
 const benefitsHome = [
   {
-    name: 'Perpetual Inspiration, Si claro',
+    name: 'Perpetual Inspiration',
     description:
-      'Never run out of ideas. Gain an endless source of fresh insights, guaranteeing a full creative pipeline.',
-    colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]', // Muy sutil
-  },
-  {
-    name: 'Guaranteed Consistency',
-    description:
-      'Flawlessly consistent editing that matches your unique style and brand guidelines, ensuring cohesive content every time.',
-    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]', // Más notorio
-  },
-  {
-    name: 'Creative Energy Restored',
-    description:
-      'Reduce burnout and regain clarity. By taking the production workload off your plate, we help you focus on what truly matters —    creating, growing, and pushing your ideas forward.',
-    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]', // Medio
-  },
-  {
-    name: 'Accelerated Launch',
-    description:
-      'Deploy videos faster. We significantly cut down turnaround times to maintain a dynamic and timely content schedule.',
-    colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]', // El más oscuro
-  },
-  {
-    name: 'Effortless Production Scale',
-    description:
-      'Easily scale your output. Grow your production capacity without limits to meet increasing audience demand.',
+      'Never run out of ideas. Concepts designed to fill your filming schedule months in advance.',
     colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
   },
   {
-    name: 'Your Dedicated Experts',
+    name: 'Guaranteed Identity',
     description:
-      'Always have a dedicated, expert team. A reliable extension of your brand, committed solely to executing your vision.',
+      ' Your style, protected. Flawless editing that respects your essence and visual guidelines in every video.',
+    colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
+  },
+  {
+    name: 'Restore Creative Energy',
+    description:
+      'Reduce burnout and regain clarity. Reclaim hundreds of hours a month to focus exclusively on creating and growing.',
+    colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
+  },
+  {
+    name: 'Market-Speed Delivery',
+    description:
+      'Publish while trends are still hot. We optimize the workflow to deliver final pieces in record time',
+    colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]',
+  },
+  {
+    name: 'Scale Your Production',
+    description:
+      'Increase your content volume and responsiveness to satisfy your audience consistently.',
+    colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
+  },
+  {
+    name: 'Your Dedicated Unit',
+    description:
+      'Always have an expert and dedicated team. Editors and strategists acting as a real extension of your brand.',
     colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
   },
   {
     name: 'Stay Ahead of the Curve',
     description:
-      'Always be up-to-date with current trends. We ensure your content is relevant and competitive in the industry.',
+      'Your content, always relevant. Through the Inspirational Report, we transform trends into actionable strategies for your channel.',
     colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]',
   },
   {
     name: 'Optimization Done For You',
     description:
-      'Stop wasting time on SEO, hashtags, and technical details. We handle all optimization for maximum visibility.',
+      'Stop wasting time on SEO and technical details. We handle optimization so your content reaches further.',
     colorClass: 'bg-primary-500/[0.05] dark:bg-primary-400/[0.05]',
   },
   {
-    name: 'Rich, Engaging Content',
+    name: 'High-Retention Content',
     description:
-      'Enrich your videos with more on-screen elements for truly captivating content that boosts engagement.',
+      'We develop your videos with a rhythm specifically designed to keep the audience connected from start to finish.',
     colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
   },
   {
     name: 'Unwavering Focus',
     description:
-      'Achieve full concentration on your message and creative process. We eliminate distractions so you focus on your core genius.',
+      'Redirect your attention to high-impact creation. We manage the production machinery so you can be the face of your content.',
     colorClass: 'bg-primary-500/[0.15] dark:bg-primary-400/[0.15]',
   },
   {
-    name: 'Professional Grade Polish',
+    name: 'High-Level Finish',
     description:
-      'Final product with unparalleled clarity and shine. Achieve a professional aesthetic that elevates your brand perception.',
+      ' Premium visual aesthetic that reinforces your authority. Professional details that elevate your brand above the rest.',
     colorClass: 'bg-primary-500/[0.10] dark:bg-primary-400/[0.10]',
   },
   {
     name: 'Stress-Free Workflow',
     description:
-      'Eliminate production bottlenecks and headaches. Enjoy a smooth workflow where all technical complexities are managed for you.',
+      'Eliminate bottlenecks and headaches. Enjoy a smooth system where we absorb all technical complexity for you.',
     colorClass: 'bg-primary-500/[0.20] dark:bg-primary-400/[0.20]',
   },
 ];

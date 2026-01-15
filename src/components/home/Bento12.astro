@@ -1,14 +1,14 @@
 ---
+import '../../styles/style.css';
+import FlipWords from '../ui/FlipWords.astro';
+
+const { items } = Astro.props as { items: Item[] };
+
 interface Item {
   name: string;
   description: string;
   colorClass: string;
 }
-
-const { items } = Astro.props as { items: Item[] };
-import '../../styles/style.css';
-import FlipWords from '../ui/FlipWords.astro';
-import GradientText from '../ui/GradientText.astro';
 ---
 
 <section class="max-md:py-20 md:py-32">
@@ -32,7 +32,7 @@ import GradientText from '../ui/GradientText.astro';
       <!-- 1 -->
       <div class={`card card-sm lg:col-span-2 ${items[0].colorClass}`}>
         <h3 class="text-4xl font-semibold lg:text-6xl">{items[0].name}</h3>
-        <p class="opacity-80">{items[0].description}</p>
+        <p class="opacity-80 lg:text-xl">{items[0].description}</p>
       </div>
 
       <!-- 2 -->
@@ -61,8 +61,8 @@ import GradientText from '../ui/GradientText.astro';
 
       <!-- 5 -->
       <div class={`card card-sm lg:col-start-5 lg:row-start-1 ${items[3].colorClass}`}>
-        <h3 class="text-3xl font-semibold md:text-4xl lg:text-lg">{items[3].name}</h3>
-        <p class="text-sm opacity-80 md:text-lg">{items[3].description}</p>
+        <h3 class="text-3xl font-semibold md:text-4xl lg:text-4xl">{items[3].name}</h3>
+        <p class="text-sm opacity-80 ">{items[3].description}</p>
       </div>
 
       <!-- 6 -->
@@ -91,13 +91,13 @@ import GradientText from '../ui/GradientText.astro';
 
       <!-- 9 -->
       <div class={`card card-sm lg:row-span-2 lg:row-start-4 ${items[8].colorClass}`}>
-        <h3 class="text-3xl font-semibold lg:text-4xl">{items[8].name}</h3>
+        <h3 class="text-3xl font-semibold lg:text-4xl tracking-wide">{items[8].name}</h3>
         <p class="text-2xl opacity-80">{items[8].description}</p>
       </div>
 
       <!-- 10 -->
       <div class={`card card-sm lg:col-start-2 lg:row-start-5 ${items[9].colorClass}`}>
-        <h3 class="text-lg font-semibold md:text-4xl lg:text-2xl">{items[9].name}</h3>
+        <h3 class="text-lg font-semibold md:text-4xl lg:text-3xl">{items[9].name}</h3>
         <p class="text-sm opacity-80 md:text-lg">{items[9].description}</p>
       </div>
 
