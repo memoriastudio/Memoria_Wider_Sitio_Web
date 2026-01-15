@@ -1,13 +1,13 @@
 ---
-import GradientText from "../ui/GradientText.astro";
+import GradientText from '../ui/GradientText.astro';
 
 const service = [
   {
     name: 'Inspirational Report',
     description:
-      'Turn creative insights into actionable direction for your next project with the Inspirational Report.',
+      'Your strategic roadmap for every video. We transform trends and data into clear ideas and concepts ready for production.',
     isFlagged: true,
-    action: 'Learn More',
+    action: 'Get the Blueprint ',
     href: '/inspirational',
     features: [],
     imageSrc: '/assets/IMG_2121.jpg',
@@ -15,9 +15,9 @@ const service = [
   {
     name: 'Edition',
     description:
-      'Where creative vision meets flawless execution — edit with impact and craft visuals that resonate.',
+      'High-retention editing focused on performance. We polish your raw footage into visuals designed to maximize watch time and brand authority.',
     isFlagged: true,
-    action: 'Learn More',
+    action: 'View Plans',
     href: '/edition',
     features: [],
     imageSrc: '/assets/pexels-muhammed-cetinkaya-470437330-17115912.jpg',
@@ -28,10 +28,10 @@ const service = [
 <section class="py-16 sm:py-20">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col gap-12 sm:gap-16">
-      <GradientText class="mb-16 text-center text-2xl md:text-4xl font-bold font-bbh-bartle">
+      <GradientText class="font-bbh-bartle mb-16 text-center text-2xl font-bold md:text-4xl">
         Services Built to Transform Ideas into Results
       </GradientText>
-      <div class="grid justify-items-center gap-20 lg:gap-8 lg:mt-0 lg:grid-cols-2">
+      <div class="grid justify-items-center gap-20 lg:mt-0 lg:grid-cols-2 lg:gap-8">
         {
           service.map((item) => (
             <div class=" relative flex h-full w-full flex-col rounded-xl bg-primary-500/30 bg-clip-border shadow-lg transition-all duration-300 hover:-translate-y-4 hover:scale-[1.02] hover:shadow-xl md:w-[460px]">
@@ -39,19 +39,19 @@ const service = [
                 <img src={item.imageSrc} alt={item.name} class="h-full w-full object-cover" />
               </div>
               <div class="p-6">
-                <h2 class=" mb-2 block text-4xl font-semibold leading-snug tracking-normal antialiased transition-colors duration-300">
+                <h2 class=" mb-2 block text-4xl font-semibold leading-snug antialiased transition-colors duration-300">
                   {item.name}
                 </h2>
-                <p class="block text-lg font-light leading-relaxed antialiased">
+                <p class="block text-lg font-light leading-relaxed antialiased tracking-tight">
                   {item.description}
                 </p>
               </div>
               <div class="p-6 pt-0">
                 <a
                   href={item.href}
-                  class="group relative inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-memoria/30 to-memoria/70 px-6 py-3 font-bold shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] dark:from-memoria/50"
+                  class="group relative inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-memoria/30 to-memoria/70 px-6 py-3 font-bold shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] dark:from-memoria/60 dark:to-memoria/90"
                 >
-                  <span class="relative flex items-center gap-2">
+                  <span class="relative flex items-center gap-2 tracking-wider">
                     {item.action}
                     <svg
                       viewBox="0 0 24 24"
