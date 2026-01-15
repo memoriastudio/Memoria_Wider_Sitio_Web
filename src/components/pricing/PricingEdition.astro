@@ -6,7 +6,7 @@ const pricing_ins = [
     periodicity: '/video',
     price: '$350',
     action: 'Purchase',
-    href: 'https://buy.stripe.com/6oU3cu0Prcuz20ge9W9sk00', //Corregir Links
+    href: 'https://buy.stripe.com/6oU8wO55Hcuz5cs7Ly9sk0D',
     features: [
       '10GB or 60min of footage',
       'Professional Editing & Cuts',
@@ -21,7 +21,7 @@ const pricing_ins = [
     periodicity: '/video',
     price: '$450',
     action: 'Purchase',
-    href: 'https://buy.stripe.com/3cIaEW55H8ej7kAaXK9sk01', //Corregir Links
+    href: 'https://buy.stripe.com/3cI14mbu50LRgVad5S9sk0E',
     features: [
       '20GB or 120min of footage',
       'Advanced Sound Design',
@@ -111,6 +111,7 @@ const pricing_ins = [
             </div>
             <a
               href={item.href}
+              target="_blank"
               class:list={[
                 'inline-flex w-full items-center justify-center rounded-full border px-5 py-3 text-base font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
                 item.price === 'Custom'
