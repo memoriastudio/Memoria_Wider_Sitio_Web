@@ -18,6 +18,20 @@ const jsonLd = {
   description:
     'High-quality editing tailored to your style, pacing, and audience — from Shorts to long-form videos.',
 };
+const services = [
+  {
+    name: 'Send Your Footage',
+    description: 'You provide the raw material or long-form video.',
+  },
+  {
+    name: 'Editing & Visual Build',
+    description: 'We edit, structure, design visuals, and apply your style.',
+  },
+  {
+    name: 'Delivery & Review',
+    description: 'You receive ready-to-post videos + optional revisions.',
+  },
+];
 ---
 
 <Layout
@@ -90,5 +104,5 @@ const jsonLd = {
   </section>
   <BenefitsBento title="What You Can Get" items={BenefitsEditing} />
   <PricingEdition />
-  <Services />
+  <Services services={services} title="How It Works: The Methodology"/>
 </Layout>

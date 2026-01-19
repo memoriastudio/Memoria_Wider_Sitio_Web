@@ -15,6 +15,24 @@ const jsonLd = {
   description:
     "Weekly creative direction and ideations tailored to your channel and what's trending.",
 };
+
+const services = [
+    {
+      name: 'Channel Analysis',
+      description:
+        'We study your style and performance patterns to ensure every idea aligns with your brand DNA',
+    },
+    {
+      name: 'Tiered Concept Development',
+      description:
+        'Our team crafts core ideations and maps them into Easy, Medium, and Advanced paths.',
+    },
+    {
+      name: 'Interactive Hub Access',
+      description:
+        'Access your report through your Personal Dashboard, designed for instant review and execution.',
+    },
+  ]
 ---
 
 <Layout
@@ -58,7 +76,7 @@ const jsonLd = {
     </div>
     <div>
       <PricingInspirational />
-      <Services />
+      <Services services={services} title="How It Works: The Methodology" />
     </div>
   </section>
 </Layout>

@@ -1,26 +1,23 @@
 ---
 import GradientText from '../ui/GradientText.astro';
 
-const services = [
-  {
-    name: 'Channel Analysis',
-    description: 'We study your style and performance patterns to ensure every idea aligns with your brand DNA',
-  },
-  {
-    name: 'Tiered Concept Development',
-    description: 'Our team crafts core ideations and maps them into Easy, Medium, and Advanced paths.',
-  },
-  {
-    name: 'Interactive Hub Access',
-    description: 'Access your report through your Personal Dashboard, designed for instant review and execution.',
-  },
-];
+interface Service {
+  name: string;
+  description: string;
+}
+
+interface Props {
+  services?: Service[];
+  title?: string;
+}
+const { services = [], title = '' } = Astro.props;
+
 ---
 
 <section class="pb-16">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col gap-8 sm:gap-12">
-      <GradientText class="text-3xl font-bold tracking-tight sm:text-4xl mt-12">How It Works: The Methodology</GradientText>
+      <GradientText class="text-3xl font-bold tracking-tight sm:text-4xl mt-12">{title}</GradientText>
       <div class="grid gap-8 lg:grid-cols-3">
         {
           services.map((service) => (
