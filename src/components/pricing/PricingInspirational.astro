@@ -2,37 +2,37 @@
 const pricing_ins = [
   {
     name: 'Basic',
-    description: 'Perfect to get started',
+    description: 'Fuel your creative engine.',
     periodicity: '/month',
     price: '$299',
     action: 'Subscribe',
     href: 'https://buy.stripe.com/6oU3cu0Prcuz20ge9W9sk00',
-    features: ['8 ideations per week.', '3 creative variants.'],
+    features: ['8 Weekly Ideations', 'Full Tiered Variations', 'Personal Hub Access'],
   },
   {
     name: 'Plus',
-    description: 'For high-scale and mission critical projects.',
+    description: 'High-frequency output for scaling.',
     isFlagged: true,
     periodicity: '/month',
     price: '$499',
     action: 'Subscribe',
     href: 'https://buy.stripe.com/3cIaEW55H8ej7kAaXK9sk01',
-    features: ['16 ideations per week.', '4 creative variants.', 'Web Platform Delivery.'],
+    features: ['16 Weekly Ideations', 'Full Tiered Variations (Easy, Medium, Advanced)', 'Interactive Web Platform Delivery'],
+    isPopular: true,
   },
   {
     name: 'Pro',
-    description: 'Designed for teams scaling up',
+    description: 'The ultimate creative partner.',
     periodicity: '/month',
     price: '$699',
     action: 'Subscribe',
     href: 'https://buy.stripe.com/3cI14m69Lamr0WcaXK9sk02',
     features: [
-      '24 ideations per week.',
-      '4+ creative variants.',
-      'Web Platform Delivery.',
-      'Weekly creative meeting.',
+      '24 Weekly Ideations',
+      'Full Tiered Variations + Custom Requests',
+      'Interactive Web Platform Delivery',
+      'Priority access to strategy meetings',
     ],
-    isPopular: true,
   },
 ];
 ---
@@ -80,9 +80,9 @@ const pricing_ins = [
 
               <p class="mt-6  dark:text-white/60">{item.description}</p>
 
-              <ul role="list" class="mt-6 space-y-6">
+              <ul role="list" class="mt-6 space-y-4">
                 {item.features.map((feature) => (
-                  <li class="flex gap-3  dark:text-white/70">
+                  <li class="flex gap-2  dark:text-white/70">
                     <svg
                       class="h-6 w-6 flex-shrink-0  dark:text-white/60"
                       xmlns="http://www.w3.org/2000/svg"

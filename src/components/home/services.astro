@@ -1,19 +1,18 @@
 ---
+import GradientText from '../ui/GradientText.astro';
+
 const services = [
   {
-    step: '01',
-    name: 'Channel Check-In',
-    description: 'We review your recent content and performance patterns.',
+    name: 'Channel Analysis',
+    description: 'We study your style and performance patterns to ensure every idea aligns with your brand DNA',
   },
   {
-    step: '02',
-    name: 'Weekly Ideation Build',
-    description: 'We craft a core idea with several creative variants.',
+    name: 'Tiered Concept Development',
+    description: 'Our team crafts core ideations and maps them into Easy, Medium, and Advanced paths.',
   },
   {
-    step: '03',
-    name: 'Creative Delivery',
-    description: 'You receive a clear, easy-to-use plan for that week’s content.',
+    name: 'Interactive Hub Access',
+    description: 'Access your report through your Personal Dashboard, designed for instant review and execution.',
   },
 ];
 ---
@@ -21,14 +20,13 @@ const services = [
 <section class="pb-16">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col gap-8 sm:gap-12">
-      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">How It Works</h2>
+      <GradientText class="text-3xl font-bold tracking-tight sm:text-4xl mt-12">How It Works: The Methodology</GradientText>
       <div class="grid gap-8 lg:grid-cols-3">
         {
           services.map((service) => (
             <div class="relative flex flex-col gap-6 rounded-3xl bg-primary-600/10 px-6 py-8 shadow-xl backdrop-blur-xl dark:bg-primary-400/10">
-              <p class="text-sm">{service.step}</p>
               <div class="flex flex-col gap-2">
-                <h3 class="text-2xl font-medium">{service.name}</h3>
+                <h3 class="text-2xl font-medium font-poppins tracking-tight">{service.name}</h3>
                 <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
                   {service.description}
                 </p>
