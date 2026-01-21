@@ -2,11 +2,11 @@
 import '../../styles/style.css';
 ---
 
-<section class="bg-neutral-950 relative px-4 pt-16 pb-24">
-  <div class="absolute md:h-96 md:w-96 h-64 w-64 rounded-full bg-memoria/40 blur-3xl"></div>
+<section class="bg-neutral-950 relative px-4 pb-24 pt-16">
+  <div class="absolute h-64 w-64 rounded-full bg-memoria/40 blur-3xl md:h-96 md:w-96"></div>
   <div class="absolute right-20 top-20 h-[24rem] w-[24rem] rounded-full bg-memoria/60 blur-3xl">
   </div>
-  <div class="absolute bottom-0 md:left-1/3 h-72 w-72 rounded-full bg-memoria/30 blur-3xl"></div>
+  <div class="absolute bottom-0 h-72 w-72 rounded-full bg-memoria/30 blur-3xl md:left-1/3"></div>
 
   <div class="relative mx-auto max-w-7xl">
     <div class="mb-14 text-center md:text-left">
@@ -28,17 +28,17 @@ import '../../styles/style.css';
             We'd love to learn more about you and what we can build together.
           </p>
         </div>
-        <div class="flex justify-center md:absolute md:bottom-20 md:left-32" >
+        <div class="flex justify-center md:absolute md:bottom-20 md:left-32">
           <img
             src="/assets/letter_send.png"
-            alt="Imagen de envio de correo"
+            alt="Email sending illustration"
             class="invert dark:invert-0"
             width="260"
             height="260"
           />
         </div>
 
-        <div class="mt-10 flex justify-center items-center gap-8 md:gap-4 ">
+        <div class="mt-10 flex items-center justify-center gap-8 md:gap-4">
           <a
             href="https://www.facebook.com/profile.php?id=100090692651300"
             class="transition"
@@ -140,7 +140,7 @@ import '../../styles/style.css';
             >First Name</label
           >
           <p id="error-first-name" class="mt-2 hidden text-sm text-[#FF0000]">
-            Por favor ingresa tu nombre.
+            Please enter your first name.
           </p>
         </div>
         <div class="group relative z-0 w-full">
@@ -158,7 +158,7 @@ import '../../styles/style.css';
             >Last Name</label
           >
           <p id="error-last-name" class="mt-2 hidden text-sm text-[#FF0000]">
-            Por favor ingresa tu apellido.
+            Please enter your last name.
           </p>
         </div>
         <div class="group relative z-0 w-full md:col-span-2">
@@ -176,7 +176,7 @@ import '../../styles/style.css';
             >Email address</label
           >
           <p id="error-email" class="mt-2 hidden text-sm text-[#FF0000]">
-            Por favor ingresa un correo electrónico válido.
+            Please enter a valid email address.
           </p>
         </div>
         <div class="group relative z-0 w-full md:col-span-2">
@@ -194,7 +194,7 @@ import '../../styles/style.css';
             >Subject</label
           >
           <p id="error-subject" class="mt-2 hidden text-sm text-[#FF0000]">
-            Por favor ingresa un asunto.
+            Please enter a subject.
           </p>
         </div>
 
@@ -211,7 +211,7 @@ import '../../styles/style.css';
             >Your message</label
           >
           <p id="error-message" class="mt-2 hidden text-sm text-[#FF0000]">
-            Por favor escribe un mensaje.
+            Please write a message.
           </p>
         </div>
 
@@ -333,7 +333,7 @@ import '../../styles/style.css';
 
       submitBtn.disabled = true;
       const originalBtnText = submitBtn.innerText;
-      submitBtn.innerText = 'Enviando...';
+      submitBtn.innerText = 'Sending...';
       submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
 
       const formData = new FormData(form);
@@ -348,7 +348,7 @@ import '../../styles/style.css';
           showPopup('error', error.message);
         }
       } catch (err) {
-        showPopup('error', 'Error de conexión. Por favor verifica tu internet.');
+        showPopup('error', 'Connection error. Please check your internet connection.');
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerText = originalBtnText;
@@ -362,14 +362,14 @@ import '../../styles/style.css';
 
       if (type === 'success') {
         iconSuccess!.classList.remove('hidden');
-        popupTitle!.innerText = '¡Mensaje enviado con éxito!';
+        popupTitle!.innerText = '¡Message sent successfully!';
         popupMessage!.innerText =
-          'Gracias por contactarte con Memoria Studio. Nos pondremos en contacto contigo a la brevedad.';
+          'Thank you for contacting Memoria Studio. We will get back to you shortly.';
       } else {
         iconError!.classList.remove('hidden');
-        popupTitle!.innerText = 'No se pudo enviar';
+        popupTitle!.innerText = 'Message could not be sent';
         popupMessage!.innerText =
-          errorMessage || 'Hubo un error inesperado. Por favor intenta nuevamente más tarde.';
+          errorMessage || 'An unexpected error occurred. Please try again later.';
       }
 
       popup!.classList.remove('opacity-0', 'pointer-events-none');
