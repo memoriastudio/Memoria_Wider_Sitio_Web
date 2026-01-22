@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PricingInspirational from '../components/pricing/PricingInspirational.astro';
 import Services from '../components/home/services.astro';
 import BenefitsBento from '../components/home/BenefitsBento.astro';
 import BenefitsEditing from '../docs/edition/benefts';
 import '../styles/style.css';
 import PricingEdition from '../components/pricing/PricingEdition.astro';
+import BtnGetInspiration from '../components/ui/BtnGetInspiration.astro';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -20,16 +20,16 @@ const jsonLd = {
 };
 const services = [
   {
-    name: 'Send Your Footage',
-    description: 'You provide the raw material or long-form video.',
+    name: 'Footage Onboarding',
+    description: 'Secure upload of your raw assets and alignment on style, pacing, and brand DNA.',
   },
   {
-    name: 'Editing & Visual Build',
-    description: 'We edit, structure, design visuals, and apply your style.',
+    name: 'Performance Editing',
+    description: 'Our team applies retention hooks and narrative pacing to transform your footage into a high-impact edit.',
   },
   {
-    name: 'Delivery & Review',
-    description: 'You receive ready-to-post videos + optional revisions.',
+    name: 'Review & Final Polish',
+    description: 'Collaborative feedback loop through our dashboard to ensure the result exceeds expectations.',
   },
 ];
 ---
@@ -45,55 +45,29 @@ const services = [
       <div class="grid-cols-reverse grid gap-12 lg:grid-cols-2 lg:gap-12">
         <div class="order-2 flex flex-col gap-10 md:order-1">
           <div class="space-y-8 text-center sm:space-y-6 md:text-left">
-            <h1 class="text-6xl font-semibold">Editing</h1>
-            <h2 class="text-3xl font-medium tracking-tight sm:text-xl">
-              High-quality editing tailored to your style, your pacing, and your audience — from
-              Shorts to long-form videos.
+            <h1 class="text-6xl font-bold">High-Retention Editing</h1>
+            <h2 class="text-3xl font-medium tracking-tight">
+              Visual authority designed for maximum watch time.
             </h2>
             <div
               class="flex flex-col items-center space-y-6 text-center md:items-start md:text-left"
             >
               <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
-                Our editing service transforms your footage into polished, engaging videos built for
-                performance.
+                Backed by years of expertise in the digital landscape, we engineer every second of
+                your video to maximize engagement. .
               </p>
               <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
-                Whether you need Shorts, long-form videos, or repurposed content, our team adapts to
-                your tone, narrative, and style.
+                From high-impact Shorts to complex long-form narratives, our systems are built to
+                turn viewers into loyal followers
               </p>
-              <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
-                We focus on clarity, pacing, retention, and visual identity — and for creators
-                looking to elevate their production, we also offer optional CGI and visual upgrades.
-              </p>
-              <a
-                href="/contact"
-                class="button-send flex w-40 items-center justify-center rounded-lg bg-primary-400 px-4 py-2 text-lg font-medium capitalize text-primary-950 transition hover:bg-primary-500/80 dark:bg-primary-700/80 dark:text-primary-200 dark:hover:bg-primary-600/80"
-              >
-                <div class="svg-wrapper-1">
-                  <div class="svg-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      height="24"
-                    >
-                      <path fill="none" d="M0 0h24v24H0z"></path>
-                      <path
-                        fill="currentColor"
-                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <span>Contact</span>
-              </a>
+              <BtnGetInspiration href="/contact" />
             </div>
           </div>
         </div>
         <img
-          class="order-1 mx-auto h-[400px] w-full rounded-3xl object-cover md:h-[600px] lg:order-2"
+          class="order-1 mx-auto h-[400px] w-full rounded-3xl object-cover md:h-[500px] lg:order-2"
           width="476"
-          height="600"
+          height="500"
           src="/assets/editing_img.webp"
           alt="Our experts working together"
           fetchpriority="high"
@@ -104,5 +78,5 @@ const services = [
   </section>
   <BenefitsBento title="What You Can Get" items={BenefitsEditing} />
   <PricingEdition />
-  <Services services={services} title="How It Works: The Methodology"/>
+  <Services services={services} title="How It Works: The Methodology" />
 </Layout>

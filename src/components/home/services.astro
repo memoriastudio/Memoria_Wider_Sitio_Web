@@ -11,19 +11,20 @@ interface Props {
   title?: string;
 }
 const { services = [], title = '' } = Astro.props;
-
 ---
 
 <section class="pb-16">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col gap-8 sm:gap-12">
-      <GradientText class="text-3xl font-bold tracking-tight sm:text-4xl mt-12">{title}</GradientText>
+      <GradientText class="mt-12 text-3xl font-bold tracking-tight sm:text-4xl">
+        {title}
+      </GradientText>
       <div class="grid gap-8 lg:grid-cols-3">
         {
           services.map((service) => (
-            <div class="relative flex flex-col gap-6 rounded-3xl bg-primary-600/10 px-6 py-8 shadow-xl backdrop-blur-xl dark:bg-primary-400/10">
+            <div class="relative flex flex-col gap-6 rounded-3xl bg-primary-600/10 px-6 py-8 shadow-xl backdrop-blur-xl transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-[0px_0px_30px_1px_rgba(139,92,246,0.30)] dark:bg-primary-400/10">
               <div class="flex flex-col gap-2">
-                <h3 class="text-2xl font-medium font-poppins tracking-tight">{service.name}</h3>
+                <h3 class="font-poppins text-2xl font-medium tracking-tight">{service.name}</h3>
                 <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
                   {service.description}
                 </p>
