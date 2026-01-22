@@ -75,15 +75,15 @@ const { items } = Astro.props as { items: Item[] };
         lg:row-span-2 flex flex-col gap-4
         ${items[5].colorClass}`}>
         <h3 class="text-2xl md:text-xl lg:text-5xl font-semibold">{items[5].name}</h3>
-        <p class="text-lg md:text-lg lg:text-xl opacity-80">{items[5].description}</p>
+        <p class="text-md md:text-lg lg:text-xl opacity-80">{items[5].description}</p>
       </div>
 
       <!-- 7 -->
       <div class={`relative rounded-3xl p-4 backdrop-blur-xl shadow-md
-        transition hover:scale-[1.02] 
+        transition hover:scale-[1.02] flex flex-col gap-4
         ${items[6].colorClass}`}>
         <h3 class="text-2xl md:text-xl font-semibold">{items[6].name}</h3>
-        <p class="max-md:text-lg opacity-80">{items[6].description}</p>
+        <p class="text-base opacity-80">{items[6].description}</p>
       </div>
 
       <!-- 8 -->
@@ -121,7 +121,7 @@ const { items } = Astro.props as { items: Item[] };
         md:row-span-1
         ${items[10].colorClass}`}>
         <h3 class="text-2xl md:text-2xl lg:text-4xl font-semibold">{items[10].name}</h3>
-        <p class="text-base md:text-sm lg:text-lg opacity-80">{items[10].description}</p>
+        <p class="text-md md:text-sm lg:text-lg opacity-80">{items[10].description}</p>
       </div>
 
     </div>
